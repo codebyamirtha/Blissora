@@ -1,0 +1,391 @@
+/* ============================================================
+   BLISSORA — DAILY CHALLENGE & ACHIEVEMENTS STYLES
+   ============================================================ */
+
+/* Banner */
+.challenge-banner img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Challenge Dashboard Stats */
+.challenge-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin: 25px 0 35px;
+}
+
+.challenge-stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border-bottom: 4px solid #2E8B57;
+}
+
+.challenge-stat-icon {
+    font-size: 32px;
+    margin-bottom: 6px;
+}
+
+.challenge-stat-val {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2E8B57;
+}
+
+.challenge-stat-lbl {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Category Filter Tabs */
+.challenge-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.challenge-tab-btn {
+    background: white;
+    border: 2px solid #c8e6c9;
+    color: #2E8B57;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.challenge-tab-btn:hover {
+    border-color: #2E8B57;
+    background: #e8f5e9;
+    transform: translateY(-2px);
+}
+
+.challenge-tab-btn.active {
+    background: #2E8B57;
+    border-color: #2E8B57;
+    color: white;
+    box-shadow: 0 4px 14px rgba(46, 139, 87, 0.3);
+}
+
+/* Main Today's Challenge Card */
+.challenge-container {
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f4fbf5 100%);
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 12px 35px rgba(46, 139, 87, 0.12);
+    border: 1px solid #d4edda;
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+.challenge-tag-badge {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2E8B57;
+    padding: 5px 16px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+#challengeTitle {
+    color: #1b5e20;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.challenge-desc {
+    color: #4a5568;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+/* Action Buttons */
+.challenge-actions-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn-complete {
+    background: linear-gradient(135deg, #2E8B57, #1e7040);
+    color: white;
+    border: none;
+    padding: 14px 34px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(46, 139, 87, 0.35);
+    transition: all 0.25s ease;
+}
+
+.btn-complete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(46, 139, 87, 0.45);
+}
+
+.btn-complete.completed-state {
+    background: linear-gradient(135deg, #43a047, #2e7d32);
+    box-shadow: 0 4px 15px rgba(67, 160, 71, 0.4);
+}
+
+.btn-random-challenge {
+    background: white;
+    border: 2px solid #ccc;
+    color: #444;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-random-challenge:hover {
+    border-color: #2E8B57;
+    color: #2E8B57;
+    background: #f9fdfa;
+}
+
+/* Completed celebration banner */
+.celebration-box {
+    display: none;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border: 2px solid #81c784;
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-top: 20px;
+    color: #1b5e20;
+    font-weight: bold;
+    animation: bounceIn 0.5s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.85); opacity: 0; }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Weekly Interactive Checklist */
+.weekly-challenges {
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #2E8B57, #66bb6a);
+    transition: width 0.4s ease;
+}
+
+.checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checklist-item {
+    background: white;
+    padding: 16px 20px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef2f5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.checklist-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.checklist-item.checked {
+    background: #f1f8e9;
+    border-color: #c8e6c9;
+}
+
+.checklist-item.checked .checklist-text {
+    text-decoration: line-through;
+    color: #78909c;
+}
+
+.checklist-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.checkbox-custom {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #aaa;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    transition: all 0.2s;
+}
+
+.checklist-item.checked .checkbox-custom {
+    background: #2E8B57;
+    border-color: #2E8B57;
+}
+
+.checklist-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Custom User Goal */
+.custom-goal-box {
+    background: #fdfdfd;
+    border: 2px dashed #c8e6c9;
+    border-radius: 16px;
+    padding: 22px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.custom-goal-form {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    margin: 15px auto 0;
+}
+
+.custom-goal-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Achievement Trophy & Badges Hall */
+.achievement {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.badge-card {
+    background: white;
+    padding: 22px 18px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border: 2px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.badge-card.unlocked {
+    border-color: #ffd700;
+    background: linear-gradient(135deg, #ffffff 0%, #fffde7 100%);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.25);
+}
+
+.badge-card.locked {
+    opacity: 0.6;
+    filter: grayscale(85%);
+}
+
+.badge-icon {
+    font-size: 44px;
+}
+
+.badge-title {
+    font-weight: bold;
+    color: #1b5e20;
+    font-size: 16px;
+}
+
+.badge-desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.badge-status {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-top: 6px;
+}
+
+.badge-card.unlocked .badge-status {
+    background: #e8f5e9;
+    color: #2E8B57;
+}
+
+.badge-card.locked .badge-status {
+    background: #f0f0f0;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .custom-goal-form {
+        flex-direction: column;
+    }
+    .challenge-actions-row {
+        flex-direction: column;
+    }
+}
+

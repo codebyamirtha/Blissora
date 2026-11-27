@@ -1,0 +1,358 @@
+/* ============================================================
+   BLISSORA — QUOTES PAGE STYLES
+   ============================================================ */
+
+/* Banner */
+.quote-banner img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Category Filter Tabs */
+.quote-category-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 25px;
+}
+
+.category-tab-btn {
+    background: white;
+    border: 2px solid #c8e6c9;
+    color: #2E8B57;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.category-tab-btn:hover {
+    border-color: #2E8B57;
+    background: #e8f5e9;
+    transform: translateY(-2px);
+}
+
+.category-tab-btn.active {
+    background: #2E8B57;
+    border-color: #2E8B57;
+    color: white;
+    box-shadow: 0 4px 15px rgba(46, 139, 87, 0.35);
+}
+
+/* Quote Container & Display Card */
+.quote-container {
+    text-align: center;
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+.quote-display-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f4fbf5 100%);
+    border-radius: 24px;
+    padding: 40px 35px;
+    box-shadow: 0 12px 35px rgba(46, 139, 87, 0.12);
+    border: 1px solid #d4edda;
+    position: relative;
+    margin: 20px 0 25px;
+}
+
+.quote-category-badge {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2E8B57;
+    padding: 4px 14px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.quote-text-wrapper {
+    position: relative;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+blockquote#quote {
+    font-size: 26px;
+    line-height: 1.6;
+    color: #2d6a4f;
+    font-style: italic;
+    font-family: Georgia, serif;
+    margin: 0 0 15px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.quote-author {
+    font-size: 17px;
+    font-weight: bold;
+    color: #555;
+    transition: opacity 0.3s ease;
+}
+
+/* Quote Action Buttons */
+.quote-actions-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn-new-quote {
+    background: linear-gradient(135deg, #2E8B57, #1e7040);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(46, 139, 87, 0.35);
+    transition: all 0.25s ease;
+}
+
+.btn-new-quote:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(46, 139, 87, 0.45);
+}
+
+.quote-tool-btn {
+    background: white;
+    border: 1px solid #ccc;
+    color: #444;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.quote-tool-btn:hover {
+    border-color: #2E8B57;
+    color: #2E8B57;
+    background: #f9fdfa;
+    transform: translateY(-2px);
+}
+
+.quote-tool-btn.favorited {
+    background: #ffebee;
+    color: #e53935;
+    border-color: #ef9a9a;
+}
+
+/* Affirmation Section */
+.affirmation {
+    text-align: center;
+    background: linear-gradient(135deg, #fffbf0 0%, #fdf8e2 100%);
+    border: 2px solid #ffe082;
+    border-radius: 22px;
+    padding: 35px 25px;
+    max-width: 850px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.15);
+}
+
+.affirmation h2 {
+    color: #b78103;
+    margin-bottom: 12px;
+}
+
+#affirmation {
+    font-size: 28px;
+    color: #795548;
+    margin: 20px auto;
+    font-family: Georgia, serif;
+    font-style: italic;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.affirmation-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.btn-affirmation {
+    background: linear-gradient(135deg, #ffb300, #f57f17);
+    color: white;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 179, 0, 0.35);
+    transition: all 0.25s;
+}
+
+.btn-affirmation:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 179, 0, 0.45);
+}
+
+/* Favorite Quotes Section */
+.favorite-quotes {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.favorites-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.favorite-card {
+    background: white;
+    border-radius: 16px;
+    padding: 22px;
+    border-left: 5px solid #2E8B57;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.favorite-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-card-text {
+    font-size: 16px;
+    color: #333;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.favorite-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.favorite-author {
+    color: #2E8B57;
+    font-weight: bold;
+}
+
+.favorite-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.fav-action-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #888;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.fav-action-btn:hover {
+    color: #e53935;
+}
+
+.fav-action-copy:hover {
+    color: #2E8B57;
+}
+
+/* User Custom Quote Submission */
+.custom-quote-section {
+    background: #f9fdfa;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 750px;
+    margin: 40px auto;
+    border: 1px solid #c8e6c9;
+}
+
+.custom-quote-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.custom-quote-form input,
+.custom-quote-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 0;
+}
+
+.custom-quote-form textarea {
+    min-height: 80px;
+}
+
+/* Empty State */
+.empty-favorites-box {
+    text-align: center;
+    padding: 35px 20px;
+    color: #888;
+    font-style: italic;
+    background: #fdfdfd;
+    border-radius: 14px;
+    border: 1px dashed #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    blockquote#quote {
+        font-size: 21px;
+    }
+    #affirmation {
+        font-size: 22px;
+    }
+    .quote-actions-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .quote-tool-btn, .btn-new-quote {
+        width: 100%;
+        justify-content: center;
+    }
+}
+

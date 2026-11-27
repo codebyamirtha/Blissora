@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Nature Gallery & Visual Relaxation</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="icon" type="image" href="logo.png">
+</head>
+
+<body>
+
+    <!-- ===========================
+            Navigation Bar
+    ============================ -->
+    <header>
+        <nav>
+            <h2>🖼️ Blissora Gallery</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood.html">Mood</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="challenge.html">Challenge</a></li>
+                <li><a href="gallery.html" style="color: yellow; font-weight: bold;">Gallery</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===========================
+            Gallery Heading
+    ============================ -->
+    <section class="gallery-heading">
+        <h1>🌿 Peaceful Nature Gallery</h1>
+        <p>Immerse yourself in breathtaking scenery, soothing colors, and calming ambient soundscapes.</p>
+    </section>
+
+    <!-- ===========================
+            AMBIENT SOUNDSCAPE BAR
+    ============================ -->
+    <section style="max-width: 1100px; margin: 0 auto 20px; padding: 0 15px;">
+        <div class="gallery-audio-bar">
+            <div class="audio-bar-left">
+                <button id="galleryAudioPlayBtn" class="audio-play-btn" title="Play Ambient Sounds">▶</button>
+                <div>
+                    <span style="font-weight: bold; font-size: 14px; color: #2E8B57; display: block;">🎵 Ambient Nature Sound</span>
+                    <span style="font-size: 12px; color: #666;">Listen while browsing the scenery</span>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <select id="gallerySoundSelect" class="sound-select-dropdown">
+                    <option value="music/birds.mp3">🐦 Forest Birds & Breeze</option>
+                    <option value="music/ocean.mp3">🌊 Calming Ocean Waves</option>
+                    <option value="music/rain.mp3">🌧️ Gentle Rainfall</option>
+                    <option value="music/piano.mp3">🎹 Peaceful Piano Chords</option>
+                    <option value="music/relaxing.mp3">🧘 Zen Tibetan Chimes</option>
+                </select>
+
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                    <span>🔊</span>
+                    <input type="range" id="galleryAudioVol" min="0" max="100" value="60" style="width: 90px; accent-color: #2E8B57; margin: 0; cursor: pointer;">
+                </div>
+            </div>
+
+            <!-- Hidden Audio Element -->
+            <audio id="galleryAudioPlayer" loop src="music/birds.mp3"></audio>
+        </div>
+    </section>
+
+    <!-- ===========================
+            FILTER TABS & TOOLBAR
+    ============================ -->
+    <section style="max-width: 1100px; margin: 0 auto; padding: 0 15px;">
+        <!-- Category Filter Tabs -->
+        <div class="gallery-filter-tabs">
+            <button class="gallery-tab-btn active" data-category="all">🌟 All Nature</button>
+            <button class="gallery-tab-btn" data-category="forest">🌲 Forests</button>
+            <button class="gallery-tab-btn" data-category="water">🌊 Water & Ocean</button>
+            <button class="gallery-tab-btn" data-category="mountain">🏔️ Mountains</button>
+            <button class="gallery-tab-btn" data-category="flowers">🌸 Flowers</button>
+            <button class="gallery-tab-btn" data-category="sunrise">🌅 Sunrise</button>
+            <button class="gallery-tab-btn" data-category="favorites">❤️ Favorites</button>
+        </div>
+
+        <!-- Toolbar (Count & Slideshow Button) -->
+        <div class="gallery-toolbar">
+            <span id="galleryItemCount" style="font-size: 14px; font-weight: bold; color: #555;">Showing 6 of 6 views</span>
+            <button id="slideshowBtn" class="toolbar-btn">
+                ▶ Zen Slideshow
+            </button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div id="galleryGrid" class="gallery-container">
+            <!-- Dynamically populated -->
+        </div>
+    </section>
+
+    <!-- ===========================
+            LIGHTBOX MODAL
+    ============================ -->
+    <div id="galleryModal" class="gallery-modal">
+        <div class="modal-content-wrapper">
+            <button id="modalClose" class="modal-close-btn" title="Close (Esc)">✕</button>
+
+            <!-- Image View -->
+            <div class="modal-img-container">
+                <button id="modalPrev" class="modal-nav-btn modal-nav-prev" title="Previous Image (←)">❮</button>
+                <img id="modalImg" src="" alt="Nature View">
+                <button id="modalNext" class="modal-nav-btn modal-nav-next" title="Next Image (→)">❯</button>
+            </div>
+
+            <!-- Image Info & Tools -->
+            <div class="modal-details">
+                <div>
+                    <h3 id="modalTitle">Image Title</h3>
+                    <p id="modalDesc">Image description</p>
+                    <span id="modalCounter" style="font-size: 12px; color: #81c784; margin-top: 4px; display: inline-block;">1 / 6</span>
+                </div>
+
+                <div class="modal-actions">
+                    <button id="modalFavBtn" class="modal-action-btn">🤍 Favorite</button>
+                    <button id="modalDownload" class="modal-action-btn">📥 Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===========================
+            NATURE RELAXATION TIPS
+    ============================ -->
+    <section class="gallery-tips">
+        <h2>🌿 How Nature Relaxes the Mind</h2>
+        <ul>
+            <li>🌲 <strong>Lowers Stress Hormones:</strong> Looking at lush greenery actively reduces cortisol and lowers resting pulse.</li>
+            <li>🌊 <strong>Blue Mind Effect:</strong> Water scenery triggers a mild meditative state characterized by calm, peacefulness, and general satisfaction.</li>
+            <li>🌅 <strong>Natural Circadian Alignment:</strong> Viewing sunrises and warm natural light boosts daytime energy and supports evening melatonin release.</li>
+            <li>🌸 <strong>Attention Restoration:</strong> Natural beauty gently holds attention without cognitive exertion, replenishing mental energy.</li>
+        </ul>
+    </section>
+
+    <!-- ===========================
+            Footer
+    ============================ -->
+    <footer>
+        <p>© 2026 Blissora | Visual Stress Relief & Nature Gallery</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="gallery.js"></script>
+
+</body>
+
+</html>

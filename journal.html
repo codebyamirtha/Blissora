@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Personal Journal</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="journal.css">
+    <link rel="icon" type="image" href="logo.png">
+</head>
+
+<body>
+
+    <!-- ===========================
+            Navigation Bar
+    ============================ -->
+    <header>
+        <nav>
+            <h2>🌿 Blissora Journal</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood.html">Mood</a></li>
+                <li><a href="journal.html" style="color: yellow; font-weight: bold;">Journal</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="challenge.html">Challenge</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===========================
+            SECTION 1: JOURNAL FORM
+    ============================ -->
+    <section class="journal-container">
+        <h1>My Daily Mindfulness Journal</h1>
+        <p>Express your thoughts, emotions, and daily reflections in a safe, peaceful space.</p>
+
+        <form id="journalForm" class="journal-form">
+            <input type="hidden" id="editIndex" value="-1">
+
+            <label for="journalDate">📅 Date</label>
+            <input type="date" id="journalDate" required>
+
+            <label for="journalTitle">📌 Journal Title</label>
+            <input type="text" id="journalTitle" placeholder="e.g. A Peaceful Morning Walk, Overcoming Stress..." required>
+
+            <span class="mood-tags-label">🏷️ Tag Your Mood for this Entry:</span>
+            <div class="mood-tags-container">
+                <button type="button" class="mood-tag-btn" data-mood="😊 Happy">😊 Happy</button>
+                <button type="button" class="mood-tag-btn active" data-mood="😌 Calm">😌 Calm</button>
+                <button type="button" class="mood-tag-btn" data-mood="💡 Inspired">💡 Inspired</button>
+                <button type="button" class="mood-tag-btn" data-mood="💖 Grateful">💖 Grateful</button>
+                <button type="button" class="mood-tag-btn" data-mood="😔 Reflective">😔 Reflective</button>
+                <button type="button" class="mood-tag-btn" data-mood="😣 Stressed">😣 Stressed</button>
+                <button type="button" class="mood-tag-btn" data-mood="🎯 Focused">🎯 Focused</button>
+            </div>
+            <input type="hidden" id="selectedMoodTag" value="😌 Calm">
+
+            <label for="journalText">✍️ Your Thoughts & Reflections</label>
+            <div class="textarea-wrapper">
+                <textarea id="journalText" rows="9" placeholder="Write freely about your day, how you feel, or what is on your mind..." required></textarea>
+                <div id="wordCountDisplay" class="word-count">0 words | 0 characters</div>
+            </div>
+
+            <div class="form-buttons-row">
+                <button type="submit" id="saveJournalBtn" class="btn-primary">💾 Save Journal Entry</button>
+                <button type="button" id="clearFormBtn" class="btn-secondary">🧹 Clear</button>
+                <button type="button" id="cancelEditBtn" class="btn-secondary" style="display: none; background: #ffebee; color: #c62828;">✕ Cancel Edit</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- ===========================
+            SECTION 2: WRITING PROMPTS
+    ============================ -->
+    <section class="tips">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <h2>💡 Writing Prompts & Ideas</h2>
+            <button id="randomPromptBtn" style="padding: 8px 16px; border-radius: 20px; font-size: 13px; background: #e8f5e9; color: #2E8B57; border: 1px solid #a5d6a7; cursor: pointer;">
+                🎲 Random Prompt
+            </button>
+        </div>
+        <p style="text-align: left; color: #666; margin-bottom: 15px;">Click any prompt to load it directly into your journal!</p>
+
+        <div class="prompts-grid">
+            <div class="prompt-card" data-prompt="What made you smile or feel proud today?">
+                <div class="prompt-text">😊 <strong>What made you smile or feel proud today?</strong></div>
+                <div class="use-prompt-pill">Use Prompt ✍️</div>
+            </div>
+
+            <div class="prompt-card" data-prompt="What are 3 things you are genuinely grateful for right now?">
+                <div class="prompt-text">💖 <strong>What are 3 things you are genuinely grateful for right now?</strong></div>
+                <div class="use-prompt-pill">Use Prompt ✍️</div>
+            </div>
+
+            <div class="prompt-card" data-prompt="What is a valuable lesson you learned this week?">
+                <div class="prompt-text">🌱 <strong>What is a valuable lesson you learned this week?</strong></div>
+                <div class="use-prompt-pill">Use Prompt ✍️</div>
+            </div>
+
+            <div class="prompt-card" data-prompt="What is one small step you want to accomplish tomorrow?">
+                <div class="prompt-text">🎯 <strong>What is one small step you want to accomplish tomorrow?</strong></div>
+                <div class="use-prompt-pill">Use Prompt ✍️</div>
+            </div>
+
+            <div class="prompt-card" data-prompt="Describe your current emotional state in 3 words and explain why.">
+                <div class="prompt-text">🌈 <strong>Describe your current emotional state in 3 words and why.</strong></div>
+                <div class="use-prompt-pill">Use Prompt ✍️</div>
+            </div>
+
+            <div class="prompt-card" data-prompt="What is something you need to gently let go of to feel peace?">
+                <div class="prompt-text">🌊 <strong>What is something you need to gently let go of to feel peace?</strong></div>
+                <div class="use-prompt-pill">Use Prompt ✍️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 3: TODAY'S GRATITUDE
+    ============================ -->
+    <section class="gratitude-container">
+        <h2>🙏 Today's Gratitude Note</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 20px;">
+            Cultivating gratitude rewires the brain for joy. Note one thing you are grateful for today:
+        </p>
+
+        <div style="max-width: 650px; margin: 0 auto;">
+            <textarea id="gratitudeInput" placeholder="I am grateful for..." rows="3"></textarea>
+            <div style="text-align: right;">
+                <button type="button" id="saveGratitudeBtn" style="padding: 10px 25px; border-radius: 20px; font-weight: bold; background: #2E8B57; color: white; border: none; cursor: pointer;">
+                    ✨ Save Gratitude
+                </button>
+            </div>
+
+            <!-- Gratitude Wall -->
+            <div id="gratitudeList" class="gratitude-wall">
+                <!-- Dynamically rendered -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 4: SAVED JOURNAL ENTRIES
+    ============================ -->
+    <section class="entries">
+        <div class="entries-header-bar">
+            <h2>📖 Saved Journal Entries (<span id="entriesCount">0</span>)</h2>
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <input type="text" id="journalSearchInput" class="search-input" placeholder="🔍 Search entries by keyword...">
+                <button id="exportJournalBtn" class="export-btn" title="Download all entries as a text file">📥 Export Journal</button>
+                <button id="clearAllEntriesBtn" style="background: transparent; border: 1px solid #ccc; color: #888; border-radius: 20px; padding: 7px 14px; font-size: 12px; cursor: pointer;" title="Clear all journal entries">🗑️ Clear All</button>
+            </div>
+        </div>
+
+        <div id="entries" class="entries-list">
+            <!-- Dynamically populated -->
+        </div>
+    </section>
+
+    <!-- ===========================
+            Footer
+    ============================ -->
+    <footer>
+        <p>© 2026 Blissora | Personal Mindfulness Journal</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="journal.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Positive Quotes & Affirmations</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quotes.css">
+    <link rel="icon" type="image" href="logo.png">
+</head>
+
+<body>
+
+    <!-- ===========================
+            Navigation Bar
+    ============================ -->
+    <header>
+        <nav>
+            <h2>❤️ Blissora Quotes</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood.html">Mood</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="quotes.html" style="color: yellow; font-weight: bold;">Quotes</a></li>
+                <li><a href="challenge.html">Challenge</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===========================
+            Quote Banner
+    ============================ -->
+    <section class="quote-banner">
+        <img src="quote.jpg" alt="Positive Quotes Peace">
+    </section>
+
+    <!-- ===========================
+            SECTION 1: DAILY POSITIVE QUOTE GENERATOR
+    ============================ -->
+    <section class="quote-container">
+        <h1>Today's Positive Quote</h1>
+        <p>Select a category or click "New Quote" to find words of comfort, inspiration, and calm.</p>
+
+        <!-- Category Filter Tabs -->
+        <div class="quote-category-tabs">
+            <button class="category-tab-btn active" data-category="all">🌟 All Quotes</button>
+            <button class="category-tab-btn" data-category="peace">🌿 Peace & Calm</button>
+            <button class="category-tab-btn" data-category="strength">💪 Strength</button>
+            <button class="category-tab-btn" data-category="selflove">💖 Self-Love</button>
+            <button class="category-tab-btn" data-category="gratitude">✨ Gratitude</button>
+            <button class="category-tab-btn" data-category="mindfulness">🧘 Mindfulness</button>
+        </div>
+
+        <!-- Quote Card Display -->
+        <div class="quote-display-card">
+            <span id="quoteCategoryBadge" class="quote-category-badge">🌿 Peace & Calm</span>
+            <div class="quote-text-wrapper">
+                <blockquote id="quote">
+                    “Every day is a new beginning. Take a deep breath and start again.”
+                </blockquote>
+                <div id="quoteAuthor" class="quote-author">— Zen Proverb</div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="quote-actions-row">
+                <button id="newQuote" class="btn-new-quote">🔄 New Quote</button>
+                <button id="favoriteBtn" class="quote-tool-btn">🤍 Add to Favorites</button>
+                <button id="copyQuoteBtn" class="quote-tool-btn" title="Copy to clipboard">📋 Copy</button>
+                <button id="speakQuoteBtn" class="quote-tool-btn" title="Listen to quote">🔊 Listen</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 2: POSITIVE AFFIRMATIONS
+    ============================ -->
+    <section class="affirmation">
+        <h2>✨ Daily Positive Affirmation</h2>
+        <p style="color: #6d4c41;">Speak these calming words aloud or repeat them in silence:</p>
+
+        <h3 id="affirmation">
+            “I am grounded, peaceful, and fully capable of handling whatever today brings.”
+        </h3>
+
+        <div class="affirmation-controls">
+            <button id="newAffirmationBtn" class="btn-affirmation">✨ Next Affirmation</button>
+            <button id="breatheAffirmationBtn" class="btn-affirmation" style="background: linear-gradient(135deg, #2E8B57, #1e7040);">
+                🌬️ Breathe & Absorb
+            </button>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 3: FAVORITE QUOTES
+    ============================ -->
+    <section class="favorite-quotes">
+        <div class="favorites-header">
+            <h2>❤️ Your Favorite Quotes</h2>
+            <button id="clearFavoritesBtn" style="background: transparent; border: 1px solid #ccc; color: #888; border-radius: 20px; padding: 6px 14px; font-size: 12px; cursor: pointer;">
+                🗑️ Clear Favorites
+            </button>
+        </div>
+
+        <div id="favoritesGrid" class="favorites-grid">
+            <!-- Dynamically populated from localStorage -->
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 4: SUBMIT CUSTOM QUOTE / MANTRA
+    ============================ -->
+    <section class="custom-quote-section">
+        <h2>✍️ Add Your Own Personal Mantra or Quote</h2>
+        <p style="text-align: center; color: #555; margin-bottom: 20px;">
+            Have a personal motto or favorite saying? Save it here to inspire you whenever you visit.
+        </p>
+
+        <form id="customQuoteForm" class="custom-quote-form">
+            <textarea id="customQuoteText" placeholder="Type your favorite quote or personal mantra here..." required></textarea>
+            <input type="text" id="customQuoteAuthor" placeholder="Author name or 'Me' (optional)">
+            <button type="submit" style="align-self: flex-end; padding: 10px 24px; border-radius: 20px; background: #2E8B57; color: white; border: none; font-weight: bold; cursor: pointer;">
+                💾 Save Mantra
+            </button>
+        </form>
+    </section>
+
+    <!-- ===========================
+            SECTION 5: BENEFITS
+    ============================ -->
+    <section class="benefits">
+        <h2>Why Read Positive Quotes?</h2>
+        <ul>
+            <li>😊 <strong>Improves Your Mood:</strong> Rewires thought patterns from rumination to hope.</li>
+            <li>💪 <strong>Increases Resilience:</strong> Reminds you of your inner strength during tough days.</li>
+            <li>🌞 <strong>Provides Perspective:</strong> Shifts attention away from worry toward gratitude.</li>
+            <li>🧘 <strong>Reduces Stress:</strong> Calms erratic mental chatter with grounding truths.</li>
+            <li>❤️ <strong>Encourages Self-Love:</strong> Fosters self-compassion, kindness, and patience.</li>
+        </ul>
+    </section>
+
+    <!-- ===========================
+            Footer
+    ============================ -->
+    <footer>
+        <p>© 2026 Blissora | Positive Quotes & Daily Inspiration</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="quotes.js"></script>
+
+</body>
+
+</html>

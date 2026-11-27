@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Mood Tracker</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mood.css">
+    <link rel="icon" type="image" href="logo.png">
+</head>
+
+<body>
+
+    <!-- ===========================
+            Navigation Bar
+    ============================ -->
+    <header>
+        <nav>
+            <h2>🌿 Blissora Mood Tracker</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood.html" style="color: yellow; font-weight: bold;">Mood</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="challenge.html">Challenge</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===========================
+            SECTION 1: PRIMARY MOOD CARDS
+    ============================ -->
+    <section class="mood-container">
+        <h1>How Are You Feeling Today?</h1>
+        <p>Select your current mood to track your emotional well-being.</p>
+
+        <div class="mood-grid">
+            <div class="mood-card happy" data-mood="Happy" data-emoji="😊">
+                <span class="mood-emoji">😊</span>
+                <h3>Happy</h3>
+            </div>
+
+            <div class="mood-card calm" data-mood="Calm" data-emoji="😌">
+                <span class="mood-emoji">😌</span>
+                <h3>Calm</h3>
+            </div>
+
+            <div class="mood-card happy" data-mood="Excited" data-emoji="🤩">
+                <span class="mood-emoji">🤩</span>
+                <h3>Excited</h3>
+            </div>
+
+            <div class="mood-card sad" data-mood="Sad" data-emoji="😔">
+                <span class="mood-emoji">😔</span>
+                <h3>Sad</h3>
+            </div>
+
+            <div class="mood-card angry" data-mood="Stressed" data-emoji="😣">
+                <span class="mood-emoji">😣</span>
+                <h3>Stressed</h3>
+            </div>
+
+            <div class="mood-card tired" data-mood="Tired" data-emoji="😴">
+                <span class="mood-emoji">😴</span>
+                <h3>Tired</h3>
+            </div>
+
+            <div class="mood-card angry" data-mood="Frustrated" data-emoji="😡">
+                <span class="mood-emoji">😡</span>
+                <h3>Frustrated</h3>
+            </div>
+        </div>
+
+        <div class="save-mood-container">
+            <button id="saveMood">💾 Save Today's Mood</button>
+        </div>
+
+        <!-- Saved Mood Display -->
+        <div id="savedMoodDisplay" class="mood-saved-display">
+            <h3>😊 Today's Recorded Mood</h3>
+            <p id="savedMoodText">No mood logged yet today. Click a card above and press Save!</p>
+            <p id="savedMoodTimestamp" style="font-size: 13px; color: #555;"></p>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 2: EMOJI QUICK PICKER
+    ============================ -->
+    <section class="emoji-picker">
+        <h2>⚡ Quick Emoji Mood Check-in</h2>
+        <p>Tap any emoji for an instant mood check-in.</p>
+
+        <div class="emoji-list">
+            <button class="emoji-btn" data-mood="Ecstatic" data-emoji="😁" title="Ecstatic">😁</button>
+            <button class="emoji-btn" data-mood="Happy" data-emoji="😊" title="Happy">😊</button>
+            <button class="emoji-btn" data-mood="Calm" data-emoji="😌" title="Calm">😌</button>
+            <button class="emoji-btn" data-mood="Neutral" data-emoji="😐" title="Neutral">😐</button>
+            <button class="emoji-btn" data-mood="Sad" data-emoji="😔" title="Sad">😔</button>
+            <button class="emoji-btn" data-mood="Tearful" data-emoji="😢" title="Tearful">😢</button>
+            <button class="emoji-btn" data-mood="Angry" data-emoji="😡" title="Angry">😡</button>
+        </div>
+
+        <div id="emojiStatusMsg" class="emoji-status-msg">Click an emoji above to check in.</div>
+    </section>
+
+    <!-- ===========================
+            SECTION 3: STRESS & ENERGY METER
+    ============================ -->
+    <section class="stress-meter">
+        <h2>🌈 Mood Energy & Stress Level</h2>
+        <p>Slide to indicate your current energy and stress level (0% = completely drained, 100% = bursting with energy).</p>
+
+        <div class="slider-container">
+            <input type="range" id="moodRange" min="0" max="100" value="50">
+            <div class="slider-labels">
+                <span>0% Low / Burnout</span>
+                <span>50% Balanced</span>
+                <span>100% High Energy</span>
+            </div>
+        </div>
+
+        <h3 id="rangeValue">50% - Balanced Energy</h3>
+
+        <button onclick="checkMood()" style="padding: 12px 30px; border-radius: 25px; font-weight: bold; font-size: 16px;">
+            🔍 Analyze Mood
+        </button>
+
+        <div id="result"></div>
+    </section>
+
+    <!-- ===========================
+            SECTION 4: RECOMMENDATIONS
+    ============================ -->
+    <section class="recommendation">
+        <h2>💡 Today's Recommendations</h2>
+        <div class="card">
+            <h3>🌿 Relaxation & Wellness Tip</h3>
+            <div class="tip-counter" id="tipCounter">Tip 1 of 10</div>
+            <p id="recommendText">Take a 10-minute walk in nature and breathe in the fresh air.</p>
+            <button id="nextTipBtn" style="padding: 10px 25px; border-radius: 20px; font-size: 15px; margin-top: 15px;">
+                🔄 Next Tip
+            </button>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 5: WEATHER MOOD ADVICE
+    ============================ -->
+    <section class="weatherMood">
+        <h2>🌤️ Today's Mood & Weather Advice</h2>
+
+        <div class="card">
+            <div class="weather-buttons">
+                <button class="weather-tab-btn active" data-weather="sunny">☀️ Sunny Day</button>
+                <button class="weather-tab-btn" data-weather="rainy">🌧️ Rainy Day</button>
+                <button class="weather-tab-btn" data-weather="cloudy">⛅ Cloudy Day</button>
+                <button class="weather-tab-btn" data-weather="cold">❄️ Chilly Day</button>
+                <button class="weather-tab-btn" data-weather="night">🌙 Evening</button>
+            </div>
+
+            <div class="weather-advice-box">
+                <h3 id="weatherTitle">☀️ Sunny Day</h3>
+                <p id="weatherAdvice">Go outside and enjoy the fresh air! A 15-minute walk under natural sunlight elevates serotonin and lifts your mood naturally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 6: RELAXING MUSIC
+    ============================ -->
+    <section class="music-section">
+        <h2>🎵 Calming Soundscapes for Your Mood</h2>
+        <p style="text-align: center; margin-bottom: 25px; color: #555;">Select a soothing soundscape to accompany your emotional check-in.</p>
+
+        <div class="music-container">
+            <div class="music-card">
+                <h3>🌧️ Rain Sounds</h3>
+                <audio controls loop>
+                    <source src="music/rain.mp3" type="audio/mpeg">
+                    <source src="music/rain.wav" type="audio/wav">
+                </audio>
+            </div>
+
+            <div class="music-card">
+                <h3>🌊 Ocean Waves</h3>
+                <audio controls loop>
+                    <source src="music/ocean.mp3" type="audio/mpeg">
+                    <source src="music/ocean.wav" type="audio/wav">
+                </audio>
+            </div>
+
+            <div class="music-card">
+                <h3>🐦 Forest Birds</h3>
+                <audio controls loop>
+                    <source src="music/birds.mp3" type="audio/mpeg">
+                    <source src="music/birds.wav" type="audio/wav">
+                </audio>
+            </div>
+
+            <div class="music-card">
+                <h3>🎹 Peaceful Piano</h3>
+                <audio controls loop>
+                    <source src="music/piano.mp3" type="audio/mpeg">
+                    <source src="music/piano.wav" type="audio/wav">
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 7: MOOD HISTORY LOG
+    ============================ -->
+    <section class="mood-history-section card">
+        <div class="history-controls">
+            <h2>📜 Recent Mood Check-in History</h2>
+            <button id="clearHistoryBtn" class="clear-history-btn" title="Clear your past mood records">🗑️ Clear History</button>
+        </div>
+
+        <div id="historyList" class="history-list">
+            <div class="empty-history-text">No previous mood logs yet. Track your mood above to begin!</div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 8: WELLNESS HABITS
+    ============================ -->
+    <section class="tips">
+        <h2>🌿 Daily Wellness Habits</h2>
+        <ul>
+            <li>💧 Drink at least 8 glasses of fresh water daily.</li>
+            <li>🚶 Take a refreshing 10-15 minute walk outside.</li>
+            <li>🌿 Practice deep 4-7-8 breathing when feeling overwhelmed.</li>
+            <li>😴 Aim for 7 to 8 hours of restorative sleep each night.</li>
+            <li>😊 Give yourself credit for small victories today.</li>
+        </ul>
+    </section>
+
+    <!-- ===========================
+            Footer
+    ============================ -->
+    <footer>
+        <p>© 2026 Blissora | Stress Relief & Mood Tracker</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="mood.js"></script>
+
+</body>
+
+</html>

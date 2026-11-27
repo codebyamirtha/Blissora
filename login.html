@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Login</title>
+
+    <!-- Favicon & CSS -->
+    <link rel="icon" type="image" href="logo.png">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- Login Container -->
+    <main class="login-container">
+
+        <!-- Left Side Image -->
+        <div class="login-image">
+            <img src="login.jpg" alt="Peaceful Meditation">
+            <div class="login-image-overlay">
+                <h3>Peace in Every Breath</h3>
+                <p>Welcome to your sanctuary for mindfulness, daily journaling, guided breathing & stress relief.</p>
+            </div>
+        </div>
+
+        <!-- Right Side Login Form -->
+        <div class="login-form">
+
+            <!-- Logo & Title -->
+            <div class="login-header">
+                <a href="index.html" title="Go to Blissora Home">
+                    <img src="logo.png" alt="Blissora Logo">
+                </a>
+                <h1>Welcome Back</h1>
+                <p>Login to continue your peaceful journey.</p>
+            </div>
+
+            <!-- In-Form Notification Alert -->
+            <div id="authAlert" class="auth-alert"></div>
+
+            <!-- Login Form -->
+            <form id="loginForm" novalidate>
+
+                <!-- Email Input -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                            autocomplete="email">
+                    </div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper has-toggle">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                            autocomplete="current-password">
+                        <button
+                            type="button"
+                            id="togglePasswordBtn"
+                            class="password-toggle-btn"
+                            title="Show/Hide Password"
+                            aria-label="Toggle password visibility">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="form-options-row">
+                    <label class="remember-me" for="rememberMe">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+
+                    <a href="#" id="forgotPasswordBtn" class="forgot-password-link">Forgot password?</a>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="loginSubmitBtn" class="btn-submit">
+                    🌿 Login to Blissora
+                </button>
+
+            </form>
+
+            <!-- Divider -->
+            <div class="form-divider">
+                <span>or</span>
+            </div>
+
+            <!-- One-Click Demo Login -->
+            <button type="button" id="demoLoginBtn" class="btn-demo">
+                ✨ One-Click Demo Login (demo@blissora.com)
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="auth-links">
+                <p>
+                    Don't have an account?
+                    <a href="signup.html">Create an Account</a>
+                </p>
+                <p>
+                    <a href="index.html" class="back-home-link">← Back to Home</a>
+                    &nbsp;•&nbsp;
+                    <a href="index.html" class="back-home-link">🌱 Continue as Guest</a>
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ===========================
+            Forgot Password Modal
+    ============================ -->
+    <div id="forgotPasswordModal" class="modal-overlay">
+        <div class="modal-content">
+            <button type="button" id="closeForgotModalBtn" class="modal-close-btn" aria-label="Close Modal">&times;</button>
+            <h3>🔑 Reset Password</h3>
+            <p>Enter your registered email address to set a new password for your Blissora account.</p>
+
+            <div id="modalAlert" class="auth-alert"></div>
+
+            <div class="form-group">
+                <label for="resetEmail">Registered Email</label>
+                <div class="input-wrapper">
+                    <input type="email" id="resetEmail" placeholder="e.g. user@example.com">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="resetNewPassword">New Password (at least 6 characters)</label>
+                <div class="input-wrapper has-toggle">
+                    <input type="password" id="resetNewPassword" placeholder="Enter your new password">
+                    <button type="button" id="toggleResetPasswordBtn" class="password-toggle-btn" title="Show/Hide Password">👁️</button>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" id="submitResetBtn" class="btn-submit" style="flex: 1;">Save New Password</button>
+                <button type="button" id="cancelResetBtn" class="btn-demo" style="width: auto; margin: 0;">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="login.js"></script>
+
+</body>
+
+</html>

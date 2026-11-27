@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Sign Up</title>
+
+    <!-- Favicon & CSS -->
+    <link rel="icon" type="image" href="logo.png">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- Signup Container -->
+    <main class="login-container">
+
+        <!-- Left Side Image -->
+        <div class="login-image">
+            <img src="signup.jpg" alt="Person enjoying peaceful nature">
+            <div class="login-image-overlay">
+                <h3>Begin Your Sanctuary</h3>
+                <p>Join Blissora today to save your daily gratitude notes, track mindful moods, and nurture inner peace.</p>
+            </div>
+        </div>
+
+        <!-- Right Side Signup Form -->
+        <div class="login-form">
+
+            <!-- Logo & Title -->
+            <div class="login-header">
+                <a href="index.html" title="Go to Blissora Home">
+                    <img src="logo.png" alt="Blissora Logo">
+                </a>
+                <h1>Create Account</h1>
+                <p>Join Blissora and start your stress-free journey.</p>
+            </div>
+
+            <!-- In-Form Notification Alert -->
+            <div id="authAlert" class="auth-alert"></div>
+
+            <!-- Signup Form -->
+            <form id="signupForm" novalidate>
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <div class="input-wrapper">
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                            autocomplete="name">
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                            autocomplete="email">
+                    </div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="form-group">
+                    <label for="password">Password (at least 6 characters)</label>
+                    <div class="input-wrapper has-toggle">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a strong password"
+                            required
+                            autocomplete="new-password">
+                        <button
+                            type="button"
+                            id="togglePasswordBtn"
+                            class="password-toggle-btn"
+                            title="Show/Hide Password"
+                            aria-label="Toggle password visibility">
+                            👁️
+                        </button>
+                    </div>
+                    <!-- Password Strength Meter -->
+                    <div id="strengthBar" class="password-strength-bar">
+                        <div id="strengthFill" class="password-strength-fill"></div>
+                    </div>
+                    <div id="strengthText" class="password-strength-text"></div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="input-wrapper has-toggle">
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm your password"
+                            required
+                            autocomplete="new-password">
+                        <button
+                            type="button"
+                            id="toggleConfirmPasswordBtn"
+                            class="password-toggle-btn"
+                            title="Show/Hide Password"
+                            aria-label="Toggle password visibility">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="signupSubmitBtn" class="btn-submit">
+                    🌿 Create My Account
+                </button>
+
+            </form>
+
+            <!-- Navigation Links -->
+            <div class="auth-links" style="margin-top: 20px;">
+                <p>
+                    Already have an account?
+                    <a href="login.html">Login Here</a>
+                </p>
+                <p>
+                    <a href="index.html" class="back-home-link">← Back to Home</a>
+                    &nbsp;•&nbsp;
+                    <a href="index.html" class="back-home-link">🌱 Explore as Guest</a>
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="login.js"></script>
+
+</body>
+
+</html>

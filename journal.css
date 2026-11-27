@@ -1,0 +1,760 @@
+/* =====================================
+        JOURNAL PAGE
+===================================== */
+
+/* Main Container */
+
+Header{
+
+    background:#2E8B57;
+
+    text-align: center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+nav{
+
+    width: 90%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+}
+
+nav h2{
+
+    color:white;
+
+    font-size:30px;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+}
+
+nav ul li{
+
+    margin-left:20px;
+
+}
+
+nav ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:yellow;
+
+}
+
+section{
+
+width:90%;
+max-width:1100px;
+margin:40px auto;
+padding:30px;
+
+background:rgba(255,255,255,.70);
+
+backdrop-filter:blur(12px);
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+transition:.4s;
+
+}
+
+
+section:hover{
+
+transform:translateY(-5px);
+
+}
+
+h3{
+
+color:#40916c;
+
+}
+
+.tips ul{
+
+    margin-left:20px;
+    margin-right:20px;
+
+}
+
+.tips li{
+
+    margin:10px 0;
+
+}
+
+header{
+
+    background:#2E8B57;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+
+
+
+
+.journal-container{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:40px auto;
+
+}
+
+header{
+
+    background:#2E8B57;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+/* Heading */
+
+.journal-container h1{
+
+    text-align:center;
+
+    color:#2E8B57;
+
+    margin-bottom:10px;
+
+}
+
+.journal-container p{
+
+    text-align:center;
+
+    color:#555;
+
+    margin-bottom:30px;
+
+}
+
+/* =====================================
+        JOURNAL FORM
+===================================== */
+
+.journal-form{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+/* Labels */
+
+.journal-form label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+    color:#333;
+
+}
+
+/* Date */
+
+.journal-form input[type="date"]{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:20px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+}
+
+/* Journal Text */
+
+.journal-form textarea{
+
+    width:100%;
+
+    min-height:220px;
+
+    padding:15px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    resize:vertical;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+}
+
+/* Save Button */
+
+.journal-form button{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:18px;
+
+}
+
+/* =====================================
+        JOURNAL ENTRIES
+===================================== */
+
+.entries{
+
+    margin-top:40px;
+
+}
+
+.entries h2{
+
+    text-align:center;
+
+    color:#2E8B57;
+
+    margin-bottom:20px;
+
+}
+
+/* Individual Entry */
+
+.entry-card{
+
+    background:white;
+
+    padding:20px;
+
+    border-left:6px solid #2E8B57;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+
+}
+
+.entry-card h3{
+
+    color:#2E8B57;
+
+    margin-bottom:10px;
+
+}
+
+.entry-card p{
+
+    color:#444;
+
+    line-height:1.6;
+
+    text-align:left;
+
+}
+
+/* =====================================
+        QUOTE BOX
+===================================== */
+
+.quote-box{
+
+    margin-top:40px;
+
+    background:#E8F8F5;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+}
+
+.quote-box h2{
+
+    color:#2E8B57;
+
+    margin-bottom:15px;
+
+}
+
+.quote-box p{
+
+    font-style:italic;
+
+    color:#444;
+
+}
+
+/* =====================================
+        MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+.journal-container{
+
+    width:95%;
+
+}
+
+.journal-form{
+
+    padding:20px;
+
+}
+
+.entry-card{
+
+    padding:15px;
+
+}
+
+textarea{
+
+width:100%;
+height:220px;
+padding:20px;
+font-size:18px;
+border-radius:20px;
+border:none;
+background:white;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+
+}
+
+
+footer{
+
+    background:#2E8B57;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:60px;
+
+}
+
+/* ============================================================
+   BLISSORA — JOURNAL PAGE INTERACTIVE ENHANCEMENTS
+   ============================================================ */
+
+/* Mood Tag Selector in Form */
+.mood-tags-label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: bold;
+    color: #2E8B57;
+    font-size: 15px;
+}
+
+.mood-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.mood-tag-btn {
+    background: white;
+    border: 2px solid #c8e6c9;
+    color: #2E8B57;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.mood-tag-btn:hover {
+    border-color: #2E8B57;
+    background: #e8f5e9;
+    transform: translateY(-2px);
+}
+
+.mood-tag-btn.active {
+    background: #2E8B57;
+    border-color: #2E8B57;
+    color: white;
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+}
+
+/* Textarea & Word Count */
+.textarea-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.word-count {
+    text-align: right;
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Form Buttons */
+.form-buttons-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    flex: 2;
+    background: linear-gradient(135deg, #2E8B57, #1e7040);
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(46, 139, 87, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 139, 87, 0.4);
+}
+
+.btn-secondary {
+    flex: 1;
+    background: #f0f0f0;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+/* Search & Filter Header */
+.entries-header-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.search-input {
+    max-width: 320px;
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    margin: 0;
+}
+
+.export-btn {
+    background: #e8f5e9;
+    color: #2E8B57;
+    border: 1px solid #a5d6a7;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.export-btn:hover {
+    background: #2E8B57;
+    color: white;
+}
+
+/* Entry Card Enhancements */
+.entry-card {
+    background: white;
+    padding: 22px;
+    border-left: 6px solid #2E8B57;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.entry-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.entry-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+.entry-title {
+    color: #2E8B57;
+    font-size: 20px;
+    margin: 0;
+}
+
+.entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #777;
+}
+
+.entry-mood-badge {
+    background: #e8f8f5;
+    color: #2E8B57;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.entry-body {
+    color: #333;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.entry-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.entry-action-btn {
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.edit-btn {
+    color: #1e88e5;
+    background: #e3f2fd;
+}
+
+.edit-btn:hover {
+    background: #1e88e5;
+    color: white;
+}
+
+.delete-btn {
+    color: #e53935;
+    background: #ffebee;
+}
+
+.delete-btn:hover {
+    background: #e53935;
+    color: white;
+}
+
+/* Interactive Writing Prompts */
+.prompts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.prompt-card {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.prompt-card:hover {
+    border-color: #2E8B57;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 139, 87, 0.15);
+}
+
+.prompt-text {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.use-prompt-pill {
+    font-size: 12px;
+    color: #2E8B57;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+/* Gratitude Section */
+.gratitude-container {
+    background: linear-gradient(135deg, #fdfbf7 0%, #f4fbf5 100%);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #c8e6c9;
+    margin-top: 40px;
+}
+
+.gratitude-container textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 14px;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.gratitude-wall {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.gratitude-item {
+    background: white;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border-left: 4px solid #ffb74d;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gratitude-text {
+    font-size: 14px;
+    color: #444;
+}
+
+.gratitude-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.gratitude-delete {
+    background: transparent;
+    border: none;
+    color: #999;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.gratitude-delete:hover {
+    color: #e53935;
+}
+
+/* Empty State */
+.empty-entries-box {
+    text-align: center;
+    padding: 45px 20px;
+    color: #777;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-buttons-row {
+        flex-direction: column;
+    }
+    .entries-header-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-input {
+        max-width: 100%;
+    }
+}

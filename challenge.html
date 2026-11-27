@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Daily Challenges & Achievements</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="challenge.css">
+    <link rel="icon" type="image" href="logo.png">
+</head>
+
+<body>
+
+    <!-- ===========================
+            Navigation Bar
+    ============================ -->
+    <header>
+        <nav>
+            <h2>🎯 Blissora Challenge</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood.html">Mood</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="challenge.html" style="color: yellow; font-weight: bold;">Challenge</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===========================
+            Challenge Banner
+    ============================ -->
+    <section class="challenge-banner">
+        <img src="challenge.jpg" alt="Daily Challenge Motivation">
+    </section>
+
+    <!-- ===========================
+            STATS DASHBOARD
+    ============================ -->
+    <section style="max-width: 900px; margin: 20px auto 30px; padding: 0 15px;">
+        <div class="challenge-stats-grid">
+            <div class="challenge-stat-card">
+                <div class="challenge-stat-icon">🔥</div>
+                <div id="statStreak" class="challenge-stat-val">1 Day</div>
+                <div class="challenge-stat-lbl">Mindfulness Streak</div>
+            </div>
+            <div class="challenge-stat-card">
+                <div class="challenge-stat-icon">🎯</div>
+                <div id="statTotal" class="challenge-stat-val">0</div>
+                <div class="challenge-stat-lbl">Challenges Completed</div>
+            </div>
+            <div class="challenge-stat-card">
+                <div class="challenge-stat-icon">🎖️</div>
+                <div id="statBadges" class="challenge-stat-val">0 / 6</div>
+                <div class="challenge-stat-lbl">Badges Unlocked</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 1: TODAY'S CHALLENGE
+    ============================ -->
+    <section class="challenge-container">
+        <span id="challengeTagBadge" class="challenge-tag-badge">🌿 Nature & Fresh Air</span>
+        <h1>Today's Daily Challenge</h1>
+
+        <h2 id="challengeTitle">🌿 Spend 10 Minutes in Nature</h2>
+        <p id="challengeDesc" class="challenge-desc">
+            Go outside and spend at least 10 minutes enjoying fresh air, feeling the breeze, and observing nature.
+        </p>
+
+        <!-- Category Tabs -->
+        <div class="challenge-tabs">
+            <button class="challenge-tab-btn active" data-category="all">🌟 All Challenges</button>
+            <button class="challenge-tab-btn" data-category="nature">🌿 Nature</button>
+            <button class="challenge-tab-btn" data-category="mind">🧘 Mindfulness</button>
+            <button class="challenge-tab-btn" data-category="health">💧 Physical</button>
+            <button class="challenge-tab-btn" data-category="detox">📵 Screen-Free</button>
+            <button class="challenge-tab-btn" data-category="kindness">💖 Kindness</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="challenge-actions-row">
+            <button id="completeChallenge" class="btn-complete">
+                ✅ Mark as Completed
+            </button>
+            <button id="randomChallengeBtn" class="btn-random-challenge">
+                🎲 Next Challenge
+            </button>
+        </div>
+
+        <!-- Celebration Box -->
+        <div id="celebrationBox" class="celebration-box">
+            🎉 Challenge Completed! Fantastic work building daily healthy habits.
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 2: WEEKLY CHECKLIST
+    ============================ -->
+    <section class="weekly-challenges card">
+        <div class="progress-header">
+            <h2>📋 Weekly Wellness Checklist</h2>
+            <div id="checklistProgressText" style="font-weight: bold; color: #2E8B57; font-size: 14px;">
+                0 of 7 Completed (0%)
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div id="checklistProgressFill" class="progress-fill"></div>
+        </div>
+
+        <!-- Checklist Items -->
+        <div id="checklistItems" class="checklist-items">
+            <!-- Dynamically rendered -->
+        </div>
+
+        <!-- Custom User Goal Box -->
+        <div class="custom-goal-box">
+            <h3>➕ Add Your Own Custom Goal for Today</h3>
+            <p style="font-size: 13px; color: #666;">Set a personal target (e.g., "Call my best friend", "Stretch for 10 minutes").</p>
+            <form id="customGoalForm" class="custom-goal-form">
+                <input type="text" id="customGoalInput" class="custom-goal-input" placeholder="Enter your custom task..." required>
+                <button type="submit" style="padding: 10px 22px; border-radius: 20px; background: #2E8B57; color: white; border: none; font-weight: bold; cursor: pointer;">
+                    Add Task
+                </button>
+            </form>
+        </div>
+
+        <div style="text-align: right; margin-top: 15px;">
+            <button id="resetWeekBtn" style="background: transparent; border: 1px solid #ccc; color: #888; border-radius: 20px; padding: 6px 14px; font-size: 12px; cursor: pointer;">
+                🔄 Reset Checklist
+            </button>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 3: ACHIEVEMENTS & BADGES
+    ============================ -->
+    <section class="achievement card">
+        <h2>🏆 Your Achievement Hall</h2>
+        <p style="color: #666; margin-bottom: 20px;">Complete challenges and daily wellness habits to unlock badges!</p>
+
+        <img src="trophy.jpg" alt="Achievement Trophy" style="width: 140px; height: 140px; object-fit: contain; margin: 0 auto 20px; display: block; border-radius: 50%;">
+
+        <!-- Badges Grid -->
+        <div class="badges-grid">
+            <div class="badge-card locked" data-badge="first">
+                <div class="badge-icon">🌟</div>
+                <div class="badge-title">First Step</div>
+                <div class="badge-desc">Complete your first daily challenge.</div>
+                <span class="badge-status">Locked 🔒</span>
+            </div>
+
+            <div class="badge-card locked" data-badge="nature">
+                <div class="badge-icon">🌿</div>
+                <div class="badge-title">Nature Spirit</div>
+                <div class="badge-desc">Complete an outdoor or nature challenge.</div>
+                <span class="badge-status">Locked 🔒</span>
+            </div>
+
+            <div class="badge-card locked" data-badge="water">
+                <div class="badge-icon">💧</div>
+                <div class="badge-title">Hydration Hero</div>
+                <div class="badge-desc">Drink 8 glasses of water in a day.</div>
+                <span class="badge-status">Locked 🔒</span>
+            </div>
+
+            <div class="badge-card locked" data-badge="detox">
+                <div class="badge-icon">📵</div>
+                <div class="badge-title">Digital Zen</div>
+                <div class="badge-desc">Spend 1 full hour away from screens.</div>
+                <span class="badge-status">Locked 🔒</span>
+            </div>
+
+            <div class="badge-card locked" data-badge="streak3">
+                <div class="badge-icon">🔥</div>
+                <div class="badge-title">Streak Master</div>
+                <div class="badge-desc">Achieve a 3-day challenge streak.</div>
+                <span class="badge-status">Locked 🔒</span>
+            </div>
+
+            <div class="badge-card locked" data-badge="champion">
+                <div class="badge-icon">👑</div>
+                <div class="badge-title">Blissora Champion</div>
+                <div class="badge-desc">Complete all weekly checklist goals.</div>
+                <span class="badge-status">Locked 🔒</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 4: BENEFITS
+    ============================ -->
+    <section class="benefits">
+        <h2>Why Practice Daily Micro-Challenges?</h2>
+        <ul>
+            <li>😊 <strong>Builds Healthy Habits:</strong> Small consistent actions compound into lasting lifestyle transformations.</li>
+            <li>💚 <strong>Elevates Mental Wellness:</strong> Micro-wins release dopamine and build self-efficacy.</li>
+            <li>🌞 <strong>Boosts Energy & Vitality:</strong> Movement, hydration, and outdoor breaks counter fatigue.</li>
+            <li>🧘 <strong>Strengthens Mindfulness:</strong> Anchors you to deliberate, intentional living every day.</li>
+            <li>😴 <strong>Promotes Deep Rest:</strong> Screen breaks and calmness prepare your nervous system for restful sleep.</li>
+        </ul>
+    </section>
+
+    <!-- ===========================
+            Footer
+    ============================ -->
+    <footer>
+        <p>© 2026 Blissora | Daily Challenges & Personal Growth</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="challenge.js"></script>
+
+</body>
+
+</html>

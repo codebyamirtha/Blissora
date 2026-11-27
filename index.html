@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Stress Relief Website</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="music.css">
+    <link rel="icon" type="image" href="logo.png">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h2>🌿 Blissora</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood.html">Mood</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="#musicSection">Music</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="challenge.html">Challenge</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <img src="hero.png" alt="logo" width="1280">
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Blissora</h1>
+            <p>Relax your mind, reduce stress, and improve your mental well-being.</p>
+            <button class="btn" onclick="document.getElementById('musicSection').scrollIntoView({behavior:'smooth'})">Start Relaxing</button>
+        </div>
+    </section>
+
+    <!-- ===========================
+            ABOUT SECTION
+    ============================ -->
+    <section>
+        <h1>About Blissora</h1>
+        <p>
+            Blissora is a stress relief website built using HTML, CSS, and JavaScript.
+            It helps users relax through meditation, soothing ambient music, journaling, mood tracking,
+            positive quotes, weather suggestions, calming galleries,
+            and a simple AI chatbot.
+        </p>
+    </section>
+
+    <!-- ===========================
+            RELAXING MUSIC ADDON SECTION
+    ============================ -->
+    <section id="musicSection" class="music-addon-section">
+        <div class="music-addon-header">
+            <h2>🎵 Relaxing Ambient Music</h2>
+            <p class="music-addon-subtitle">Immerse yourself in gentle nature sounds and meditative harmonies to calm your mind.</p>
+        </div>
+
+        <!-- Now Playing Card -->
+        <div class="now-playing-card">
+            <div class="now-playing-info">
+                <span id="currentTrackIcon" class="track-icon">🧘</span>
+                <div class="track-details">
+                    <h3 id="currentTrackTitle">Zen Meditation</h3>
+                    <p id="currentTrackDesc" class="track-tagline">432Hz healing bowl & calm theta drone</p>
+                </div>
+            </div>
+
+            <!-- Animated Visualizer Bars -->
+            <div id="visualizerContainer" class="visualizer-container">
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+            </div>
+
+            <!-- Controls: Play / Pause Button -->
+            <div class="music-controls">
+                <button id="addonPlayBtn" class="addon-play-btn" title="Play Music">▶</button>
+            </div>
+
+            <!-- Volume Slider & Mute Toggle -->
+            <div class="volume-control-row">
+                <button id="addonMuteBtn" class="mute-btn" title="Mute / Unmute">🔊</button>
+                <input id="addonVolumeSlider" class="volume-slider" type="range" min="0" max="100" value="60">
+                <span class="volume-label">60%</span>
+            </div>
+        </div>
+
+        <!-- Soundtrack Selection Grid -->
+        <h3 class="track-selection-title">🌿 Choose Your Soundscape</h3>
+        <div class="sound-tracks-grid">
+            <div class="sound-track-card active" data-track="zen">
+                <span class="track-card-icon">🧘</span>
+                <span class="track-card-name">Zen Bowl</span>
+                <span class="track-card-desc">432Hz deep meditative drone</span>
+            </div>
+            <div class="sound-track-card" data-track="rain">
+                <span class="track-card-icon">🌧️</span>
+                <span class="track-card-name">Rain & Thunder</span>
+                <span class="track-card-desc">Gentle drops & distant rumble</span>
+            </div>
+            <div class="sound-track-card" data-track="ocean">
+                <span class="track-card-icon">🌊</span>
+                <span class="track-card-name">Ocean Waves</span>
+                <span class="track-card-desc">Rhythmic soothing surf</span>
+            </div>
+            <div class="sound-track-card" data-track="birds">
+                <span class="track-card-icon">🐦</span>
+                <span class="track-card-name">Forest Birds</span>
+                <span class="track-card-desc">Morning breeze & sweet song</span>
+            </div>
+            <div class="sound-track-card" data-track="piano">
+                <span class="track-card-icon">🎹</span>
+                <span class="track-card-name">Calm Piano</span>
+                <span class="track-card-desc">Warm healing chord harmonies</span>
+            </div>
+        </div>
+
+        <!-- Calming Wellness Tip -->
+        <div id="currentTrackTip" class="music-tip-box">
+            Tip: Inhale peace for 4 seconds, exhale tension for 4 seconds.
+        </div>
+    </section>
+
+    <!-- ===========================
+            FEATURES
+    ============================ -->
+    <section>
+        <h2>Our Features</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>🎵 Relaxing Music</h3>
+                <p>Listen to soothing nature & meditation sounds.</p>
+            </div>
+            <div class="card">
+                <h3>😊 Mood Tracker</h3>
+                <p>Track your daily emotions.</p>
+            </div>
+            <div class="card">
+                <h3>📝 Journal</h3>
+                <p>Write your daily thoughts.</p>
+            </div>
+            <div class="card">
+                <h3>🧘 Meditation</h3>
+                <p>Practice breathing and relaxation.</p>
+            </div>
+            <div class="card">
+                <h3>💬 AI Chatbot</h3>
+                <p>Get simple wellness suggestions.</p>
+            </div>
+            <div class="card">
+                <h3>🌦 Weather</h3>
+                <p>Receive weather-based relaxation tips.</p>
+            </div>
+            <div class="card">
+                <h3>🌄 Nature Gallery</h3>
+                <p>Enjoy peaceful images from nature.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            DAILY MOTIVATION
+    ============================ -->
+    <section>
+        <h2>🌿 Daily Motivation</h2>
+        <p id="dailyQuote">
+            Every day is a new opportunity to smile.
+        </p>
+    </section>
+
+    <!-- ===========================
+            QUICK ACCESS
+    ============================ -->
+    <section>
+        <h2>Quick Access</h2>
+        <div class="cards">
+            <div class="card">
+                <button onclick="document.getElementById('musicSection').scrollIntoView({behavior:'smooth'})">
+                    🎵 Relaxing Music
+                </button>
+            </div>
+            <div class="card">
+                <button onclick="location.href='mood.html'">
+                    Mood Tracker
+                </button>
+            </div>
+            <div class="card">
+                <button onclick="location.href='journal.html'">
+                    Journal
+                </button>
+            </div>
+            <div class="card">
+                <button onclick="location.href='meditation.html'">
+                    Meditation
+                </button>
+            </div>
+            <div class="card">
+                <button onclick="location.href='chatbot.html'">
+                    AI Chatbot
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            FOOTER
+    ============================ -->
+    <footer>
+        <p>
+            © <span id="year"></span> Blissora | Stress Relief Website
+        </p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="topBtn" style="display:none; position:fixed; bottom:20px; right:20px;">
+        ↑ Top
+    </button>
+
+    <!-- ============================================================
+         FLOATING MINI-PLAYER ADDON WIDGET
+         ============================================================ -->
+    <div id="blissoraFloatingWidget" class="blissora-floating-music">
+        <button id="floatingMusicTrigger" class="floating-music-trigger" title="Toggle Music Player">
+            <span class="pulse-dot"></span>
+            <span>🎵 Music</span>
+        </button>
+        <div id="floatingMusicPanel" class="floating-music-panel">
+            <div class="floating-panel-header">
+                <span>🌿 Relaxing Music</span>
+                <button id="floatingMusicClose" class="floating-close-btn" title="Close">✕</button>
+            </div>
+            <div id="floatingTrackTitle" class="floating-track-title">🧘 Zen Meditation</div>
+            <div class="floating-controls-row">
+                <button id="floatingPlayBtn" class="floating-play-btn" title="Play / Pause">▶</button>
+            </div>
+            <select id="floatingTrackSelect" class="floating-quick-select">
+                <option value="zen">🧘 Zen Meditation</option>
+                <option value="rain">🌧️ Calming Rain</option>
+                <option value="ocean">🌊 Ocean Waves</option>
+                <option value="birds">🐦 Forest Birds</option>
+                <option value="piano">🎹 Peaceful Piano</option>
+            </select>
+            <div class="floating-volume-row">
+                <span>🔊</span>
+                <input id="floatingVolumeSlider" class="floating-volume-slider" type="range" min="0" max="100" value="60">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="music.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Weather & Mood Suggestions</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="icon" type="image" href="logo.png">
+</head>
+
+<body>
+
+    <!-- ===========================
+            Navigation Bar
+    ============================ -->
+    <header>
+        <nav>
+            <h2>🌤️ Blissora Weather</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood.html">Mood</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="challenge.html">Challenge</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="weather.html" style="color: yellow; font-weight: bold;">Weather</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===========================
+            Weather Banner
+    ============================ -->
+    <section class="weather-banner">
+        <img src="weather.jpg" alt="Weather Sky">
+    </section>
+
+    <!-- ===========================
+            WEATHER SEARCH & CITY CHIPS
+    ============================ -->
+    <section class="weather-search-container">
+        <h1>Check Today's Weather & Wellness Tips</h1>
+        <p>Discover personalized self-care routines aligned with your local atmosphere.</p>
+
+        <!-- Search Bar -->
+        <div class="weather-search-box">
+            <input type="text" id="city" class="weather-input" placeholder="Enter any city name (e.g. London, Chennai, Tokyo...)">
+            <button id="searchWeather" class="weather-search-btn">🔍 Search Weather</button>
+        </div>
+
+        <!-- Quick Select City Chips -->
+        <div style="font-size: 13px; font-weight: bold; color: #555; margin-top: 15px;">Quick Select Popular Cities:</div>
+        <div class="quick-cities-row">
+            <button class="city-chip active" data-city="chennai">🌴 Chennai</button>
+            <button class="city-chip" data-city="mumbai">🌆 Mumbai</button>
+            <button class="city-chip" data-city="delhi">🏛️ Delhi</button>
+            <button class="city-chip" data-city="bengaluru">💻 Bengaluru</button>
+            <button class="city-chip" data-city="london">🇬🇧 London</button>
+            <button class="city-chip" data-city="newyork">🗽 New York</button>
+            <button class="city-chip" data-city="tokyo">🗼 Tokyo</button>
+            <button class="city-chip" data-city="paris">🥐 Paris</button>
+        </div>
+
+        <!-- Weather Simulation Mode -->
+        <div style="font-size: 13px; font-weight: bold; color: #555; margin-top: 15px;">Explore Suggestions by Weather Condition:</div>
+        <div class="condition-selector-row">
+            <button class="condition-pill" data-condition="sunny">☀️ Bright & Sunny</button>
+            <button class="condition-pill" data-condition="rain">🌧️ Calming Rain</button>
+            <button class="condition-pill" data-condition="cloudy">⛅ Overcast & Mild</button>
+            <button class="condition-pill" data-condition="cold">❄️ Chilly & Crisp</button>
+        </div>
+    </section>
+
+    <!-- ===========================
+            MAIN WEATHER DISPLAY CARD
+    ============================ -->
+    <section class="weather-card-main">
+        <div class="weather-header-info">
+            <h2 id="cityName" class="weather-location">Chennai, India</h2>
+            <span class="weather-timestamp">Live Atmosphere Update</span>
+        </div>
+
+        <!-- Weather Hero (Icon + Temperature) -->
+        <div class="weather-hero-block">
+            <span id="weatherIcon" class="weather-icon-large">☀️</span>
+            <div class="weather-temp-block">
+                <div id="temperature" class="temp-large">31°C</div>
+                <div id="condition" class="weather-condition-text">Sunny & Warm</div>
+            </div>
+        </div>
+
+        <!-- Detailed Metrics Grid -->
+        <div class="weather-metrics-grid">
+            <div class="metric-pill">
+                <div class="metric-lbl">🌡️ Feels Like</div>
+                <div id="feelsLike" class="metric-val">35°C</div>
+            </div>
+            <div class="metric-pill">
+                <div class="metric-lbl">💧 Humidity</div>
+                <div id="humidity" class="metric-val">72%</div>
+            </div>
+            <div class="metric-pill">
+                <div class="metric-lbl">💨 Wind Speed</div>
+                <div id="windSpeed" class="metric-val">14 km/h</div>
+            </div>
+            <div class="metric-pill">
+                <div class="metric-lbl">☀️ UV Index</div>
+                <div id="uvIndex" class="metric-val">High (8)</div>
+            </div>
+        </div>
+
+        <!-- Dynamic Weather-Based Wellness Suggestion Box -->
+        <div class="weather-wellness-box">
+            <h3 id="wellnessTitle">☀️ Sunny & Warm Wellness Plan</h3>
+            <p id="wellnessDesc">
+                Natural sunlight signals your brain to produce serotonin, elevating mood and alertness. Take advantage of the bright sky while keeping your body cool and hydrated.
+            </p>
+            <ul id="wellnessTipsList" class="wellness-tips-list">
+                <!-- Dynamically populated -->
+            </ul>
+
+            <div style="margin-top: 15px;">
+                <button id="weatherAudioBtn" class="weather-music-pill" title="Play relaxing sound for this weather">
+                    🐦 Listen to Forest Birds & Breeze
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            WEATHER & MENTAL HEALTH TIPS
+    ============================ -->
+    <section class="tips">
+        <h2>🌿 The Science of Weather & Mood</h2>
+        <ul>
+            <li>☀️ <strong>Sunlight & Serotonin:</strong> Morning sunlight stimulates the optic nerve, instructing your hypothalamus to boost serotonin and stabilize mood.</li>
+            <li>🌧️ <strong>Negative Ions in Rain:</strong> Raindrops colliding with the ground generate high concentrations of negative ions, scientifically linked to reduced anxiety.</li>
+            <li>⛅ <strong>Cloudy Comfort:</strong> Mild, cloud-covered days decrease sensory overstimulation, making it an ideal environment for introspection and journaling.</li>
+            <li>💧 <strong>Hydration & Fatigue:</strong> Even mild dehydration (1-2%) increases perceived fatigue and impairs working memory. Drink fresh water consistently.</li>
+        </ul>
+    </section>
+
+    <!-- ===========================
+            Footer
+    ============================ -->
+    <footer>
+        <p>© 2026 Blissora | Atmospheric Wellness & Weather Suggestions</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="weather.js"></script>
+
+</body>
+
+</html>

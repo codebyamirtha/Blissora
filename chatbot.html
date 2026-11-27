@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | AI Wellness Companion</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="icon" type="image" href="logo.png">
+</head>
+
+<body>
+
+    <!-- ===========================
+            Navigation Bar
+    ============================ -->
+    <header>
+        <nav>
+            <h2>🤖 Blissora AI Assistant</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood.html">Mood</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="challenge.html">Challenge</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="chatbot.html" style="color: yellow; font-weight: bold;">AI Chatbot</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===========================
+            Chatbot Banner
+    ============================ -->
+    <section class="chatbot-banner">
+        <img src="chatbox.jpg" alt="Blissora AI Chatbot Assistant">
+    </section>
+
+    <!-- ===========================
+            CHAT SECTION
+    ============================ -->
+    <section class="chat-container">
+        <!-- Chat Header Bar -->
+        <div class="chat-header-bar">
+            <div class="bot-profile">
+                <div class="bot-avatar">🤖</div>
+                <div>
+                    <div class="bot-status-text">Blissora AI Wellness Companion</div>
+                    <div class="bot-online-badge">
+                        <span class="online-dot"></span> Online &bull; Ready to help
+                    </div>
+                </div>
+            </div>
+
+            <button id="clearChatBtn" class="chat-tool-btn" title="Reset conversation">
+                🗑️ Clear Chat
+            </button>
+        </div>
+
+        <!-- Scrollable Chat Box -->
+        <div id="chatBox">
+            <!-- Messages populated dynamically -->
+        </div>
+
+        <!-- User Input Row -->
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask about stress, sleep, breathing, meditation..." autocomplete="off">
+            <button id="sendBtn">Send ➤</button>
+        </div>
+    </section>
+
+    <!-- ===========================
+            QUICK QUESTIONS CHIPS
+    ============================ -->
+    <section class="quick-questions card">
+        <h2>⚡ Quick Wellness Questions</h2>
+        <p style="color: #666; font-size: 14px; margin-bottom: 15px;">
+            Tap any question below for immediate support and guidance:
+        </p>
+
+        <div class="quick-questions-grid">
+            <button class="quick-question-btn" data-query="I feel stressed and overwhelmed right now">
+                😰 I feel stressed
+            </button>
+            <button class="quick-question-btn" data-query="How can I start meditating today?">
+                🧘 Meditation Tips
+            </button>
+            <button class="quick-question-btn" data-query="I can't sleep. What should I do?">
+                😴 Sleep Advice
+            </button>
+            <button class="quick-question-btn" data-query="Teach me a calming breathing exercise">
+                🌬️ Breathing Techniques
+            </button>
+            <button class="quick-question-btn" data-query="Share an inspiring motivational quote">
+                💖 Positive Quote
+            </button>
+            <button class="quick-question-btn" data-query="What can Blissora help me with?">
+                🌿 What can Blissora do?
+            </button>
+        </div>
+    </section>
+
+    <!-- ===========================
+            AI TOPICS & CAPABILITIES
+    ============================ -->
+    <section class="chat-features card">
+        <h2>💡 What Can You Talk To Me About?</h2>
+        <ul style="line-height: 1.8; color: #444; margin-top: 15px;">
+            <li>😊 <strong>Stress & Anxiety Reduction:</strong> Grounding tools, 5-4-3-2-1 technique, and soothing breathwork.</li>
+            <li>🧘 <strong>Meditation & Mindfulness:</strong> Guidance for beginners, body scans, and loving-kindness.</li>
+            <li>😴 <strong>Restful Sleep Hygiene:</strong> Evening relaxation routines and sleep-friendly ambient soundscapes.</li>
+            <li>📝 <strong>Journaling & Gratitude:</strong> Expressive writing prompts and daily gratitude habits.</li>
+            <li>🌦️ <strong>Weather & Emotional Balance:</strong> Adapting your mindset to sunny, rainy, or overcast days.</li>
+        </ul>
+
+        <div style="margin-top: 20px; padding: 14px; background: #fdfbf7; border-left: 4px solid #ffb74d; border-radius: 8px; font-size: 13px; color: #795548;">
+            <strong>Friendly Note:</strong> Blissora AI is a supportive digital wellness companion created for stress relief and mindfulness education. If you are ever experiencing an acute medical emergency or severe mental health crisis, please reach out to professional healthcare providers or national support helplines.
+        </div>
+    </section>
+
+    <!-- ===========================
+            Footer
+    ============================ -->
+    <footer>
+        <p>© 2026 Blissora | AI Wellness & Stress Relief</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="chatbot.js"></script>
+
+</body>
+
+</html>

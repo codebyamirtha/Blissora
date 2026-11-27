@@ -1,0 +1,754 @@
+/* ==========================================
+        BLISSORA - MAIN CSS
+========================================== */
+/* ============================================================
+   BLISSORA — EXTRA FEATURES ADD-ON (STYLES)
+   ============================================================
+   All classes/ids start with "blissora-" so nothing here will
+   override or clash with your existing CSS. Colors are set as
+   CSS variables at the top — change these to match your brand,
+   and every feature below updates automatically.
+   ============================================================ */
+
+section{
+
+width:90%;
+max-width:1100px;
+margin:40px auto;
+padding:30px;
+
+background:rgba(255,255,255,.70);
+
+backdrop-filter:blur(12px);
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+transition:.4s;
+
+}
+
+
+section:hover{
+
+transform:translateY(-5px);
+
+}
+
+h3{
+
+color:#40916c;
+
+}
+
+.tips ul{
+
+    margin-left:20px;
+    margin-right:20px;
+
+}
+
+.tips li{
+
+    margin:10px 0;
+
+}
+
+:root {
+  --blissora-primary: #6FA79E;   /* CHANGE to your brand's main color */
+  --blissora-bg: #F3F1EC;        /* CHANGE to your light background color */
+  --blissora-text: #2E3B4E;      /* CHANGE to your heading/text color */
+}
+
+/* Dark mode overrides — applied when JS adds "blissora-dark" or "dark-mode" to <body> */
+body.blissora-dark,
+body.dark-mode {
+  --blissora-bg: #1B2430;
+  --blissora-text: #F3F1EC;
+  background: #1B2430;
+  color: #F3F1EC;
+}
+body.blissora-dark .blissora-quote-section,
+body.dark-mode .blissora-quote-section,
+body.blissora-dark .blissora-timer-section,
+body.dark-mode .blissora-timer-section,
+body.blissora-dark .blissora-music-section,
+body.dark-mode .blissora-music-section {
+  background: #242F3D;
+}
+body.dark-mode section,
+body.dark-mode .card,
+body.dark-mode .gallery-card,
+body.dark-mode .music-card {
+  background: #242F3D;
+  color: #F3F1EC;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ---------- 1. Dark/Light toggle button ---------- */
+.blissora-theme-toggle {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+/* ---------- 2. Daily quote ---------- */
+.blissora-quote-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: var(--blissora-bg);
+}
+
+.blissora-quote-text {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--blissora-text);
+  max-width: 560px;
+  margin: 0 auto 24px;
+}
+
+/* ---------- shared button style used by all sections ---------- */
+.blissora-btn {
+  padding: 10px 22px;
+  border-radius: 24px;
+  border: none;
+  background: var(--blissora-primary);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.blissora-btn-outline {
+  background: transparent;
+  border: 2px solid var(--blissora-primary);
+  color: var(--blissora-primary);
+}
+
+body.blissora-dark .blissora-btn-outline {
+  color: var(--blissora-primary);
+}
+
+/* ---------- 3. Meditation timer ---------- */
+.blissora-timer-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: var(--blissora-bg);
+}
+
+.blissora-section-title {
+  color: var(--blissora-text);
+  margin-bottom: 20px;
+}
+
+.blissora-timer-display {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--blissora-primary);
+  margin: 20px 0;
+  font-family: monospace;
+}
+
+.blissora-timer-options,
+.blissora-timer-controls {
+  margin-bottom: 14px;
+}
+
+/* ---------- 4. Ambient music player ---------- */
+.blissora-music-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: var(--blissora-bg);
+}
+
+.blissora-volume-row {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--blissora-text);
+  font-size: 13px;
+}
+
+/* ---------- 5. Interactive aesthetic pattern ---------- */
+.blissora-pattern-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none; /* lets clicks pass through to your content */
+}
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Body */
+
+body{
+
+    background:#F5FFF8;
+
+    color:#333;
+
+    line-height:1.6;
+
+}
+
+/* ==========================================
+            NAVIGATION BAR
+========================================== */
+
+header{
+
+    background:#2E8B57;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+nav{
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+}
+
+nav h2{
+
+    color:white;
+
+    font-size:30px;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+}
+
+nav ul li{
+
+    margin-left:20px;
+
+}
+
+nav ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:yellow;
+
+}
+
+/* ==========================================
+            HERO SECTION
+========================================== */
+
+.hero{
+
+    height:90vh;
+
+    background-image:url("hero1.jpeg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.hero-content{
+
+    background:rgba(0,0,0,.5);
+
+    padding:50px;
+
+    border-radius:15px;
+
+}
+
+.hero-content h1{
+
+    color:white;
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content p{
+
+    color:white;
+
+    font-size:22px;
+
+    margin-bottom:30px;
+
+}
+
+.hero-content button{
+
+    background:#2E8B57;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.hero-content button:hover{
+
+    background:#145A32;
+
+}
+
+/* ==========================================
+            SECTION
+========================================== */
+
+section{
+
+    width:90%;
+
+    margin:60px auto;
+
+}
+
+section h1{
+
+    font-size:40px;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:#2E8B57;
+
+}
+
+section h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:#2E8B57;
+
+}
+
+section p{
+
+    text-align:center;
+
+}
+
+/* ==========================================
+            CARDS
+========================================== */
+
+.cards,
+
+.feature-box,
+
+.gallery-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.card,
+
+.gallery-card{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0px 5px 15px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.card:hover,
+
+.gallery-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/* ==========================================
+            GALLERY
+========================================== */
+
+.gallery-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+.gallery-card h3{
+
+    margin:15px 0;
+
+    color:#2E8B57;
+
+}
+
+/* ==========================================
+            BANNER IMAGES
+========================================== */
+
+.quote-banner img,
+
+.challenge-banner img,
+
+.calendar-banner img,
+
+.weather-banner img,
+
+.chatbot-banner img{
+
+    width:100%;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+/* ==========================================
+            MEDITATION IMAGE
+========================================== */
+
+.meditation-container img{
+
+    width:300px;
+
+    display:block;
+
+    margin:25px auto;
+
+    border-radius:15px;
+
+}
+
+/* ==========================================
+            PROFILE IMAGE
+========================================== */
+
+.profile-section{
+
+    text-align:center;
+
+}
+
+.profile-section img{
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================
+            CHAT BOX
+========================================== */
+
+#chatBox{
+
+    background:white;
+
+    border:2px solid #ddd;
+
+    height:350px;
+
+    overflow-y:auto;
+
+    padding:20px;
+
+    border-radius:10px;
+
+}
+
+.bot-message{
+
+    background:#E8F8F5;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin-bottom:15px;
+
+}
+
+.chat-input{
+
+    display:flex;
+
+    margin-top:20px;
+
+}
+
+.chat-input input{
+
+    flex:1;
+
+}
+
+/* ==========================================
+            INPUT
+========================================== */
+
+input,
+
+textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    margin:10px 0 20px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+/* ==========================================
+            BUTTON
+========================================== */
+
+button{
+
+    background:#2E8B57;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#145A32;
+
+}
+
+/* ==========================================
+            TABLE
+========================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:30px;
+
+}
+
+th{
+
+    background:#2E8B57;
+
+    color:white;
+
+}
+
+th,
+
+td{
+
+    border:1px solid #ccc;
+
+    padding:15px;
+
+    text-align:center;
+
+}
+
+/* ==========================================
+            LIST
+========================================== */
+
+ul{
+
+    margin-left:20px;
+
+}
+
+ul li{
+
+    margin:10px 0;
+
+}
+
+/* ==========================================
+            FOOTER
+========================================== */
+
+footer{
+
+    background:#2E8B57;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:60px;
+
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+nav{
+
+    flex-direction:column;
+
+}
+
+nav ul{
+
+    flex-direction:column;
+
+    margin-top:20px;
+
+    text-align:center;
+
+}
+
+nav ul li{
+
+    margin:10px 0;
+
+}
+
+.hero-content h1{
+
+    font-size:40px;
+
+}
+
+.hero-content{
+
+    padding:25px;
+
+}
+
+.cards,
+
+.gallery-container{
+
+    grid-template-columns:1fr;
+
+}
+
+}

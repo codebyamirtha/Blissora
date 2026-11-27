@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Meditation</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="meditation.css">
+    <link rel="stylesheet" href="music.css">
+    <link rel="icon" type="image" href="logo.png">
+</head>
+
+<body>
+
+    <!-- ===========================
+            Navigation Bar
+    ============================ -->
+    <header>
+        <nav>
+            <h2>🧘 Blissora Meditation</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood.html">Mood</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="meditation.html" style="color: yellow; font-weight: bold;">Meditation</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="challenge.html">Challenge</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===========================
+            Meditation Welcome Hero
+    ============================ -->
+    <section class="meditation-container">
+        <h1>Take a Deep Breath</h1>
+        <p>Quiet your mind, release bodily tension, and return to the present moment.</p>
+        <img src="meditation.jpg" alt="Meditation Peace">
+    </section>
+
+    <!-- ===========================
+            SECTION 1: BREATHING EXERCISE
+    ============================ -->
+    <section class="breathing">
+        <h2>🌬️ Interactive Breathing Guide</h2>
+        <p>Synchronize your breath with the circle to trigger your body's natural relaxation response.</p>
+
+        <div class="breathing-guide-box">
+            <!-- Animated Breathing Circle -->
+            <div id="breathingCircle" class="breathing-circle">
+                <span id="breathingText">Ready</span>
+            </div>
+
+            <div id="breathingInstruction" class="breathing-instruction">
+                Press "Start Breathing" and follow the circle's rhythm.
+            </div>
+
+            <!-- Breathing Controls -->
+            <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 20px;">
+                <button id="startBreathingBtn" style="padding: 12px 28px; border-radius: 25px; font-weight: bold; font-size: 15px; background: #2E8B57; color: white; border: none; cursor: pointer;">
+                    ▶ Start Breathing
+                </button>
+                <button id="stopBreathingBtn" style="display: none; padding: 12px 28px; border-radius: 25px; font-weight: bold; font-size: 15px; background: #ffa000; color: white; border: none; cursor: pointer;">
+                    ⏸ Pause Guide
+                </button>
+            </div>
+
+            <!-- Breathing Modes -->
+            <span style="font-size: 13px; font-weight: bold; color: #555;">Breathing Techniques:</span>
+            <div class="breathing-mode-selector">
+                <button class="breathing-mode-btn active" data-mode="box">Box (4-4-4-4)</button>
+                <button class="breathing-mode-btn" data-mode="relax">Relax (4-7-8)</button>
+                <button class="breathing-mode-btn" data-mode="calm">Calm (4-6)</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 2: MEDITATION TIMER
+    ============================ -->
+    <section class="timer-section">
+        <h2>⏱️ Meditation Timer</h2>
+        <p>Choose your session duration and immerse yourself in peaceful stillness.</p>
+
+        <!-- Preset Duration Options -->
+        <div class="timer-presets">
+            <button class="preset-btn" data-minutes="1">1 Min</button>
+            <button class="preset-btn" data-minutes="3">3 Mins</button>
+            <button class="preset-btn active" data-minutes="5">5 Mins</button>
+            <button class="preset-btn" data-minutes="10">10 Mins</button>
+            <button class="preset-btn" data-minutes="15">15 Mins</button>
+            <button class="preset-btn" data-minutes="20">20 Mins</button>
+        </div>
+
+        <h1 id="timer" class="timer">05:00</h1>
+
+        <!-- Progress Bar -->
+        <div class="timer-progress-container">
+            <div id="timerProgressBar" class="timer-progress-bar"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="timer-controls">
+            <button id="startBtn" class="btn-start">▶ Start</button>
+            <button id="pauseBtn" class="btn-pause">⏸ Pause</button>
+            <button id="resetBtn" class="btn-reset">🔄 Reset</button>
+        </div>
+
+        <!-- Auto-play Audio Checkbox -->
+        <div style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; color: #555;">
+            <input type="checkbox" id="autoPlayMusicCheckbox" checked style="width: auto; margin: 0; cursor: pointer;">
+            <label for="autoPlayMusicCheckbox" style="cursor: pointer;">Play relaxing soundscape automatically when meditation starts</label>
+        </div>
+
+        <!-- Completion Card -->
+        <div id="completionCard" class="completion-card">
+            <h3>🎉 Session Completed!</h3>
+            <p id="completionMessage">You dedicated 5 peaceful minutes to your mental clarity and inner balance. Notice how your body feels right now.</p>
+            <button id="closeCompletionBtn" style="padding: 10px 24px; border-radius: 20px; background: #2E8B57; color: white; border: none; font-weight: bold; cursor: pointer;">
+                Done ✨
+            </button>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 3: MEDITATION STATS
+    ============================ -->
+    <section class="meditation-stats-section">
+        <h2>📊 Your Meditation Journey</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">🧘</div>
+                <div id="statSessions" class="stat-value">0</div>
+                <div class="stat-label">Total Sessions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div id="statMinutes" class="stat-value">0m</div>
+                <div class="stat-label">Time Meditated</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div id="statStreak" class="stat-value">1 Day</div>
+                <div class="stat-label">Mindfulness Streak</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 4: RELAXING MUSIC
+    ============================ -->
+    <section class="music-section">
+        <h2>🎵 Relaxing Meditation Soundscapes</h2>
+        <p>Select your favorite ambient accompaniment to anchor your awareness.</p>
+
+        <div class="music-player">
+            <audio id="relaxMusic" controls loop style="width: 100%; margin-bottom: 15px;">
+                <source src="music/relaxing.mp3" type="audio/mpeg">
+                <source src="music/relaxing.wav" type="audio/wav">
+                Your browser does not support audio.
+            </audio>
+
+            <div class="meditation-tracks" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px;">
+                <button class="track-select-btn active" data-src="music/relaxing.mp3" style="padding: 8px 18px; border-radius: 20px; font-size: 14px;">🧘 Zen Bowl</button>
+                <button class="track-select-btn" data-src="music/rain.mp3" style="padding: 8px 18px; border-radius: 20px; font-size: 14px;">🌧️ Rain</button>
+                <button class="track-select-btn" data-src="music/ocean.mp3" style="padding: 8px 18px; border-radius: 20px; font-size: 14px;">🌊 Ocean</button>
+                <button class="track-select-btn" data-src="music/birds.mp3" style="padding: 8px 18px; border-radius: 20px; font-size: 14px;">🐦 Birds</button>
+                <button class="track-select-btn" data-src="music/piano.mp3" style="padding: 8px 18px; border-radius: 20px; font-size: 14px;">🎹 Piano</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 5: GUIDED TECHNIQUES
+    ============================ -->
+    <section class="guided-techniques-section">
+        <h2>🌿 Guided Meditation Techniques</h2>
+        <p style="text-align: center; color: #555;">Choose a technique to set the suggested duration and intent for your practice.</p>
+
+        <div class="techniques-grid">
+            <div class="technique-card" data-minutes="3" data-name="Mindful Breathing">
+                <div>
+                    <h3 class="technique-title">🌬️ Mindful Breathing (3 Mins)</h3>
+                    <p class="technique-desc">Bring attention to the natural rhythm of breathing without changing it. Anchor to the sensation of air at your nostrils.</p>
+                </div>
+                <button class="practice-btn">Practice This ➔</button>
+            </div>
+
+            <div class="technique-card" data-minutes="5" data-name="Full Body Scan">
+                <div>
+                    <h3 class="technique-title">🧘 Full Body Scan (5 Mins)</h3>
+                    <p class="technique-desc">Mentally travel through your body from your toes to your forehead, consciously softening and relaxing any tension.</p>
+                </div>
+                <button class="practice-btn">Practice This ➔</button>
+            </div>
+
+            <div class="technique-card" data-minutes="10" data-name="Loving-Kindness (Metta)">
+                <div>
+                    <h3 class="technique-title">💖 Loving-Kindness (10 Mins)</h3>
+                    <p class="technique-desc">Quietly repeat warm wishes of peace, safety, and happiness for yourself, loved ones, and all living beings.</p>
+                </div>
+                <button class="practice-btn">Practice This ➔</button>
+            </div>
+
+            <div class="technique-card" data-minutes="15" data-name="Release & Let Go">
+                <div>
+                    <h3 class="technique-title">🌊 Release & Let Go (15 Mins)</h3>
+                    <p class="technique-desc">Picture mental worries or anxieties as clouds floating gently across a wide, clear blue sky, fading into nothingness.</p>
+                </div>
+                <button class="practice-btn">Practice This ➔</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            SECTION 6: BENEFITS
+    ============================ -->
+    <section class="benefits">
+        <h2>✨ Scientific Benefits of Meditation</h2>
+        <ul>
+            <li>😊 <strong>Reduces Stress:</strong> Decreases cortisol levels and calms the sympathetic nervous system.</li>
+            <li>💖 <strong>Improves Emotional Balance:</strong> Enhances mood and builds psychological resilience.</li>
+            <li>🧠 <strong>Sharpens Focus:</strong> Strengthens cognitive control, memory retention, and mental stamina.</li>
+            <li>😴 <strong>Improves Sleep Quality:</strong> Promotes natural production of melatonin for deeper rest.</li>
+            <li>🌿 <strong>Lowers Blood Pressure:</strong> Relaxes blood vessels and supports cardiovascular wellness.</li>
+        </ul>
+    </section>
+
+    <!-- ===========================
+            Footer
+    ============================ -->
+    <footer>
+        <p>© 2026 Blissora | Mindfulness & Meditation</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="meditation.js"></script>
+
+</body>
+
+</html>

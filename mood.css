@@ -1,0 +1,903 @@
+/* =====================================
+        MOOD PAGE
+===================================== */
+
+/* Main Section */
+
+Header{
+
+    background:#2E8B57;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+nav{
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+}
+
+nav h2{
+
+    color:rgb(255, 255, 255);
+
+    font-size:30px;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+}
+
+nav ul li{
+
+    margin-left:20px;
+
+}
+
+nav ul li a{
+
+    color:rgb(18, 16, 16);
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:yellow;
+
+}
+
+section{
+
+width:90%;
+max-width:1100px;
+margin:40px auto;
+padding:30px;
+
+background:whitesmoke;
+
+backdrop-filter:blur(12px);
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+transition:.4s;
+
+}
+
+section:hover{
+
+transform:translateY(-5px);
+
+}
+
+h2{
+
+text-align:center;
+
+color:#2d6a4f;
+
+font-size:35px;
+
+margin-bottom:25px;
+
+}
+
+h3{
+
+color:#40916c;
+
+}
+
+.tips ul{
+
+    margin-left:20px;
+    margin-right:20px;
+
+}
+
+.tips li{
+
+    margin:10px 0;
+
+}
+
+
+.music-section{
+    text-align:center;
+    padding:60px 20px;
+    background:#f5fff5;
+}
+
+.music-section h2{
+    color:#2e7d32;
+    font-size:38px;
+    margin-bottom:40px;
+}
+
+.music-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.music-section{
+    text-align:center;
+    padding:60px 20px;
+    background:#f5fff5;
+}
+
+.music-section h2{
+    color:#2e7d32;
+    font-size:38px;
+    margin-bottom:40px;
+}
+
+.music-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.music-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    transition:.3s;
+}
+
+.music-card:hover{
+    transform:translateY(-8px);
+}
+
+.music-card h3{
+    color:#2e7d32;
+    margin-bottom:15px;
+}
+
+.music-card audio{
+    width:100%;
+}
+
+.hero{
+    position:relative;
+    height:500px;
+    overflow:hidden;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(55%);
+    transition:1s;
+}
+
+.hero img:hover{
+    transform:scale(1.08);
+}
+
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    text-align:center;
+}
+
+.hero-text h1{
+    font-size:65px;
+    text-shadow:3px 3px 15px black;
+}
+
+.hero-text p{
+    font-size:22px;
+} 
+
+.mood-container{
+
+    width:90%;
+
+    max-width:1000px;
+
+    margin:40px auto;
+
+    text-align:center;
+
+}
+
+.card{
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+    padding:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+    transition:.5s;
+    border:1px solid rgba(255,255,255,.3);
+}
+
+.card:hover{
+    transform:translateY(-15px) scale(1.05);
+}
+
+/* Heading */
+
+.mood-container h1{
+
+    color:#2E8B57;
+
+    margin-bottom:10px;
+
+}
+
+.mood-container p{
+
+    color:#555;
+
+    margin-bottom:30px;
+
+}
+
+
+.mood-btn{
+
+padding:20px;
+width:150px;
+border:none;
+border-radius:25px;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+margin:15px;
+transition:.4s;
+
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+color:white;
+
+}
+
+.mood-btn:hover{
+
+transform:scale(1.15);
+box-shadow:0 15px 30px rgba(0,0,0,.4);
+
+}
+
+/* =====================================
+        MOOD CARDS
+===================================== */
+
+.mood-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+
+    gap:20px;
+
+}
+
+/* Individual Mood Card */
+
+.mood-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+    transition:0.3s;
+
+}
+
+.mood-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.mood-card span{
+
+    font-size:50px;
+
+    display:block;
+
+    margin-bottom:15px;
+
+}
+
+.mood-card h3{
+
+    color:#2E8B57;
+
+}
+
+/* =====================================
+        DIFFERENT MOOD COLORS
+===================================== */
+
+.happy{
+
+    background:#FFF8B3;
+
+}
+
+.calm{
+
+    background:#D7F8E3;
+
+}
+
+.sad{
+
+    background:#DCEBFF;
+
+}
+
+.angry{
+
+    background:#FFD6D6;
+
+}
+
+.tired{
+
+    background:#F3E5F5;
+
+}
+
+/* Selected Mood */
+
+.selected{
+
+    border:3px solid #2E8B57;
+
+}
+
+/* =====================================
+        SAVE BUTTON
+===================================== */
+
+.save-mood{
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+.save-mood button{
+
+    padding:14px 35px;
+
+    font-size:18px;
+
+}
+
+/* =====================================
+        TODAY'S MOOD
+===================================== */
+
+.mood-result{
+
+    width:90%;
+
+    max-width:700px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+.mood-result h2{
+
+    color:#2E8B57;
+
+    margin-bottom:15px;
+
+}
+
+/* =====================================
+        WELLNESS TIPS
+===================================== */
+
+.tips{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    background:#F8FFF8;
+
+    padding:25px;
+
+    border-radius:10px;
+
+}
+
+.tips h2{
+
+    color:#2E8B57;
+
+    margin-bottom:15px;
+
+}
+
+.tips ul{
+
+    margin-left:20px;
+
+}
+
+.tips li{
+
+    margin:10px 0;
+
+}
+
+/* =====================================
+        MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+.mood-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.mood-card{
+
+    padding:20px;
+
+}
+
+}
+
+
+footer{
+
+    background:#2E8B57;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:60px;
+
+}
+
+/* ============================================================
+   BLISSORA — MOOD TRACKER INTERACTIVE OPTIONS STYLES
+   ============================================================ */
+
+/* Primary Mood Grid */
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.mood-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px 15px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border: 3px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    user-select: none;
+}
+
+.mood-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(46, 139, 87, 0.2);
+}
+
+.mood-card.selected {
+    border-color: #2E8B57;
+    background: #E8F8F5;
+    box-shadow: 0 8px 25px rgba(46, 139, 87, 0.3);
+    transform: translateY(-6px) scale(1.03);
+}
+
+.mood-card .mood-emoji {
+    font-size: 52px;
+    display: block;
+    margin-bottom: 12px;
+    transition: transform 0.3s;
+}
+
+.mood-card:hover .mood-emoji {
+    transform: scale(1.15);
+}
+
+.mood-card h3 {
+    margin: 0;
+    color: #2E8B57;
+    font-size: 20px;
+}
+
+/* Save Mood Button */
+.save-mood-container {
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.save-mood-container button {
+    background: linear-gradient(135deg, #2E8B57, #1e7040);
+    color: white;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(46, 139, 87, 0.3);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.save-mood-container button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(46, 139, 87, 0.4);
+}
+
+/* Saved Mood Result Display Box */
+.mood-saved-display {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-radius: 18px;
+    padding: 20px;
+    margin: 20px auto 0;
+    max-width: 650px;
+    border: 1px solid #a5d6a7;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(46, 139, 87, 0.15);
+}
+
+.mood-saved-display h3 {
+    color: #1b5e20;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.mood-saved-display p {
+    color: #2e7d32;
+    font-size: 16px;
+    margin: 4px 0;
+}
+
+/* Stress / Energy Meter */
+.stress-meter {
+    text-align: center;
+    padding: 35px 25px;
+}
+
+.slider-container {
+    max-width: 550px;
+    margin: 25px auto 15px;
+    position: relative;
+}
+
+#moodRange {
+    width: 100%;
+    height: 12px;
+    border-radius: 8px;
+    accent-color: #2E8B57;
+    outline: none;
+    cursor: pointer;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #666;
+    margin-top: 8px;
+}
+
+#rangeValue {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2E8B57;
+    margin: 15px 0;
+    transition: color 0.3s;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 14px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Emoji Quick Picker */
+.emoji-picker {
+    text-align: center;
+}
+
+.emoji-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.emoji-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    padding: 0;
+}
+
+.emoji-btn:hover {
+    transform: scale(1.2);
+    border-color: #2E8B57;
+    box-shadow: 0 8px 18px rgba(46, 139, 87, 0.25);
+}
+
+.emoji-btn.active {
+    border-color: #2E8B57;
+    background: #e8f5e9;
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(46, 139, 87, 0.3);
+}
+
+.emoji-status-msg {
+    color: #2E8B57;
+    font-weight: 500;
+    font-size: 15px;
+    min-height: 24px;
+}
+
+/* Recommendations Card */
+.recommendation .card {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+}
+
+#recommendText {
+    font-size: 18px;
+    color: #2d6a4f;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    line-height: 1.6;
+    transition: opacity 0.3s ease;
+}
+
+.tip-counter {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Weather Mood Advice */
+.weatherMood .card {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+}
+
+.weather-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.weather-tab-btn {
+    background: white;
+    border: 2px solid #ccc;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.weather-tab-btn:hover {
+    border-color: #2E8B57;
+    color: #2E8B57;
+    transform: translateY(-2px);
+}
+
+.weather-tab-btn.active {
+    background: #2E8B57;
+    border-color: #2E8B57;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+}
+
+.weather-advice-box {
+    background: #f9fdfa;
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #d4edda;
+    margin-top: 15px;
+}
+
+.weather-advice-box h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.weather-advice-box p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Mood History Log Section */
+.mood-history-section {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.history-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.clear-history-btn {
+    background: #f0f0f0;
+    color: #666;
+    border: 1px solid #ccc;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.clear-history-btn:hover {
+    background: #ff4d4f;
+    border-color: #ff4d4f;
+    color: white;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.history-item {
+    background: white;
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #2E8B57;
+}
+
+.history-item-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.history-emoji {
+    font-size: 26px;
+}
+
+.history-mood-name {
+    font-weight: bold;
+    color: #1b5e20;
+    font-size: 16px;
+}
+
+.history-item-right {
+    font-size: 13px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.history-energy-badge {
+    background: #e8f5e9;
+    color: #2E8B57;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.empty-history-text {
+    text-align: center;
+    color: #888;
+    padding: 25px;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissora | Settings & Preferences</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="settings.css">
+    <link rel="icon" type="image" href="logo.png">
+</head>
+
+<body>
+
+    <!-- ===========================
+            Navigation Bar
+    ============================ -->
+    <header>
+        <nav>
+            <h2>⚙️ Blissora Settings</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mood.html">Mood</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="challenge.html">Challenge</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="settings.html" style="color: yellow; font-weight: bold;">Settings</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="settings-container">
+
+        <!-- ===========================
+                Intro Header
+        ============================ -->
+        <section class="settings-header-card">
+            <h1>⚙️ Preferences & Customization</h1>
+            <p>Customize your Blissora experience. Control themes, soundscapes, mindful reminders, accessibility, and your private wellness data.</p>
+        </section>
+
+        <!-- ===========================
+                Profile Section
+        ============================ -->
+        <section class="settings-card profile-card" id="profileSection">
+            <div class="settings-card-header">
+                <span class="card-icon">👤</span>
+                <h2>User Profile</h2>
+            </div>
+
+            <div class="profile-avatar-container">
+                <img id="profileAvatar" src="profile.jpg" alt="Profile">
+            </div>
+
+            <h3 class="profile-name" id="displayProfileName">Mindful Explorer</h3>
+            <p class="profile-email" id="displayProfileEmail">blissora.user@example.com</p>
+            <div class="profile-mantra" id="displayProfileMantra">"Inhale peace, exhale tension."</div>
+
+            <div class="profile-stats-row">
+                <span class="profile-stat-badge" id="memberSinceBadge">📅 Member since Nov 2026</span>
+                <span class="profile-stat-badge">🔒 100% Private & Local</span>
+            </div>
+
+            <div>
+                <button id="editProfileBtn" class="font-btn">✏️ Edit Profile</button>
+            </div>
+
+            <!-- Profile Edit Box -->
+            <div id="profileEditBox" class="profile-edit-box">
+                <h4 style="margin-top:0; color: #1b5e20;">Edit Your Information</h4>
+
+                <label for="profileNameInput">Full Name</label>
+                <input type="text" id="profileNameInput" placeholder="Enter your name" maxlength="35">
+
+                <label for="profileEmailInput">Email Address</label>
+                <input type="email" id="profileEmailInput" placeholder="Enter your email">
+
+                <label for="profileMantraInput">Personal Affirmation / Calming Motto</label>
+                <input type="text" id="profileMantraInput" placeholder="e.g. Inhale peace, exhale tension" maxlength="80">
+
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <button id="saveProfileBtn" class="font-btn" style="background: #2E8B57; color: white;">💾 Save Profile</button>
+                    <button id="cancelProfileBtn" class="font-btn" style="background: #f0f0f0; color: #555; border-color: #ccc;">Cancel</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================
+                Theme Settings
+        ============================ -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <span class="card-icon">🌙</span>
+                <h2>Appearance & Theme</h2>
+            </div>
+
+            <p style="color: #666; font-size: 14px; margin-top: 0;">Choose between daytime nature brightness or night-friendly dark mode for eye comfort.</p>
+
+            <div class="theme-options-row">
+                <button id="lightMode" class="theme-btn active">
+                    ☀️ Light Mode
+                </button>
+                <button id="darkMode" class="theme-btn">
+                    🌙 Dark Mode
+                </button>
+            </div>
+
+            <p id="themeStatus" style="font-size: 13px; text-align: center; color: #666; margin: 8px 0 0;"></p>
+        </section>
+
+        <!-- ===========================
+                Music & Audio Settings
+        ============================ -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <span class="card-icon">🎵</span>
+                <h2>Relaxing Audio Preferences</h2>
+            </div>
+
+            <div class="music-controls-grid">
+                <div>
+                    <label style="font-size: 14px; font-weight: bold; color: #333; display: block; margin-bottom: 8px;">Master Background Volume</label>
+                    <div class="music-slider-wrapper">
+                        <span>🔈</span>
+                        <input id="musicVolume" type="range" min="0" max="100" value="60">
+                        <span id="volumePercent" style="font-weight: bold; color: #2E8B57; min-width: 45px;">60%</span>
+                    </div>
+                </div>
+
+                <div class="music-track-select-box">
+                    <label for="defaultTrackSelect" style="font-size: 14px; font-weight: bold; color: #333;">Preferred Soundscape</label>
+                    <select id="defaultTrackSelect">
+                        <option value="music/relaxing.mp3">🌿 Relaxing Lofi & Ambient</option>
+                        <option value="music/piano.mp3">🎹 Gentle Piano Serenade</option>
+                        <option value="music/ocean.mp3">🌊 Ocean Waves & Coast</option>
+                        <option value="music/birds.mp3">🐦 Forest Birdsong</option>
+                        <option value="music/rain.mp3">🌧️ Soft Rain & Nature</option>
+                    </select>
+                </div>
+
+                <div class="music-actions-row">
+                    <button id="testAudioBtn" class="font-btn">🔊 Test Sound</button>
+                    <button id="muteAudioBtn" class="font-btn">🔇 Mute Audio</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================
+                Notification Settings
+        ============================ -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <span class="card-icon">🔔</span>
+                <h2>Daily Mindfulness Reminders</h2>
+            </div>
+
+            <div class="toggle-switch-row">
+                <div>
+                    <div class="toggle-label">Enable Daily Reminder</div>
+                    <div class="toggle-desc">Receive gentle pauses for meditation, journaling, and breathing.</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="dailyReminderToggle">
+                    <span class="slider-round"></span>
+                </label>
+            </div>
+
+            <p id="reminderStatusText" style="font-size: 13px; color: #888; margin: 10px 0;"></p>
+
+            <div id="reminderSubcontrols" class="reminder-subcontrols" style="display: none;">
+                <div>
+                    <label for="reminderTime">Reminder Time:</label>
+                    <input type="time" id="reminderTime" value="09:00">
+                </div>
+
+                <div>
+                    <label for="reminderCategory">Mindfulness Topic:</label>
+                    <select id="reminderCategory">
+                        <option value="mindful_breathing">🧘 Mindful Breathing</option>
+                        <option value="journaling">📖 Daily Gratitude Journal</option>
+                        <option value="mood_checkin">🌿 Mood Tracker Check-in</option>
+                        <option value="daily_challenge">🎯 Daily Wellness Challenge</option>
+                    </select>
+                </div>
+
+                <button id="testNotificationBtn" class="font-btn">🔔 Send Test Reminder</button>
+            </div>
+        </section>
+
+        <!-- ===========================
+                Accessibility Settings
+        ============================ -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <span class="card-icon">♿</span>
+                <h2>Accessibility & Readability</h2>
+            </div>
+
+            <p style="color: #666; font-size: 14px; margin-top: 0;">Adjust font scaling and visual preferences to make Blissora comfortable for your eyes.</p>
+
+            <div class="font-controls-row">
+                <button id="decreaseFontBtn" class="font-btn">A- Smaller</button>
+                <button id="resetFontBtn" class="font-btn">A Default (100%)</button>
+                <button id="increaseFontBtn" class="font-btn">A+ Larger</button>
+                <span id="fontScaleDisplay" style="font-weight: bold; color: #2E8B57; align-self: center; margin-left: 8px;">100%</span>
+            </div>
+
+            <div id="fontPreviewBox" class="font-preview-box">
+                🌿 "Take a slow, deep breath. You are in control of your calm, one moment at a time."
+                <div style="font-size: 12px; color: #888; margin-top: 6px;">(Live Font Scale Preview)</div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <div class="toggle-switch-row">
+                    <div>
+                        <div class="toggle-label">High Contrast Mode</div>
+                        <div class="toggle-desc">Enhances edge contrast and sharpens card borders for clarity.</div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="highContrastToggle">
+                        <span class="slider-round"></span>
+                    </label>
+                </div>
+
+                <div class="toggle-switch-row">
+                    <div>
+                        <div class="toggle-label">Reduced Motion</div>
+                        <div class="toggle-desc">Minimizes smooth sliding and fading animations.</div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="reducedMotionToggle">
+                        <span class="slider-round"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================
+                Data & Privacy Section
+        ============================ -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <span class="card-icon">🔒</span>
+                <h2>Data Management & Privacy</h2>
+            </div>
+
+            <p style="color: #666; font-size: 14px; margin-top: 0;">
+                Blissora stores your journal entries, mood logs, meditation streaks, and preferences <strong>completely on your own device</strong>. We do not track or store your personal thoughts on any external servers.
+            </p>
+
+            <div id="storageUsageText" class="storage-info-bar">
+                💾 Local Storage: Calculating usage...
+            </div>
+
+            <div class="data-actions-row">
+                <button id="exportDataBtn" class="btn-export-data">📥 Export All My Data (JSON)</button>
+                <button id="importDataBtn" class="btn-import-data">📤 Restore Backup</button>
+                <button id="resetDataBtn" class="btn-reset-data">🗑️ Reset All App Data</button>
+                <input type="file" id="importFileInput" accept=".json" style="display: none;">
+            </div>
+        </section>
+
+        <!-- ===========================
+                About Blissora Section
+        ============================ -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <span class="card-icon">✨</span>
+                <h2>About Blissora</h2>
+            </div>
+
+            <p style="line-height: 1.6; color: #555; font-size: 14px; margin-top: 0;">
+                <strong>Blissora</strong> is a complete mental health, mindfulness, and stress relief web application built with vanilla HTML5, CSS3, and JavaScript. It provides a peaceful sanctuary to track moods, write gratitude journals, practice guided box breathing, explore soothing nature soundscapes, solve daily wellness challenges, and stay grounded.
+            </p>
+
+            <div class="system-status-grid">
+                <div class="system-badge">
+                    <div class="badge-title">App Version</div>
+                    <div class="badge-status">v2.0 (Offline-Ready)</div>
+                </div>
+                <div class="system-badge">
+                    <div class="badge-title">Sound Engine</div>
+                    <div class="badge-status">5 Ambient Tracks</div>
+                </div>
+                <div class="system-badge">
+                    <div class="badge-title">Storage Mode</div>
+                    <div class="badge-status">Private Browser Local</div>
+                </div>
+                <div class="system-badge">
+                    <div class="badge-title">Interactive Modules</div>
+                    <div class="badge-status">10 / 10 Active</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===========================
+            Reset Confirmation Modal
+    ============================ -->
+    <div id="resetConfirmModal" class="settings-modal-overlay">
+        <div class="settings-modal">
+            <h3>⚠️ Reset All Data?</h3>
+            <p>
+                This will permanently delete your stored journal entries, gratitude notes, mood history, custom goals, and meditation statistics on this device.
+                <br><br>
+                We recommend exporting a backup first. Are you sure you want to proceed?
+            </p>
+            <div class="settings-modal-buttons">
+                <button id="confirmResetBtn" class="btn-reset-data" style="background:#e53e3e; color:white;">Yes, Reset Everything</button>
+                <button id="cancelResetBtn" class="font-btn" style="background:#f0f0f0; color:#444; border-color:#ccc;">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===========================
+            Toast Notification
+    ============================ -->
+    <div id="settingsToast" class="settings-toast"></div>
+
+    <!-- ===========================
+            Footer
+    ============================ -->
+    <footer>
+        <p>© 2026 Blissora | Peace in Every Breath</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="settings.js"></script>
+
+</body>
+
+</html>
